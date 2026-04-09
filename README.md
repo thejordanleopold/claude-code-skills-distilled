@@ -8,6 +8,16 @@ Claude Code skills are context files that load automatically when relevant tasks
 
 Install by placing skill directories in `~/.claude/skills/`. Claude Code picks them up automatically.
 
+## Installation
+
+```bash
+# Clone into your Claude skills directory
+git clone https://github.com/thejordanleopold/claude-code-skills-distilled ~/.claude/skills
+
+# Or copy individual skills
+cp -r claude-code-skills-distilled/debugging ~/.claude/skills/
+```
+
 ## Skills (31 total)
 
 ### Planning & Architecture
@@ -174,16 +184,6 @@ Every skill is also a slash command. Type `/skill-name` to invoke it directly, o
 | `/debugging` | 4-phase root cause investigation, Stop-the-Line rule, structured debug report. No fixes before diagnosis | Before proposing any fix for a bug, error, crash, or unexpected behavior |
 | `/multi-agent-orchestration` | Parallel dispatch, swarm pattern, file ownership, conflict prevention, subagent prompt structure | Decomposing a task across multiple agents working concurrently |
 | `/skill-creation` | CSO-optimized descriptions, TDD for documentation, progressive disclosure with `references/` | Creating or improving a Claude Code skill |
-
-## Installation
-
-```bash
-# Clone into your Claude skills directory
-git clone https://github.com/thejordanleopold/claude-code-skills-distilled ~/.claude/skills
-
-# Or copy individual skills
-cp -r claude-code-skills-distilled/debugging ~/.claude/skills/
-```
 
 ## Design Principles
 
