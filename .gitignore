@@ -1,1 +1,4 @@
 PROCESS.md
+.DS_Store
+.agentseal-baseline.txt
+.claude/

@@ -1,6 +1,6 @@
 # Claude Code Skills Distilled
 
-39 production-quality skills for [Claude Code](https://claude.ai/code), synthesized from 17 community skill repositories into focused, high-signal reference files.
+42 production-quality skills for [Claude Code](https://claude.ai/code), synthesized from 17 community skill repositories into focused, high-signal reference files.
 
 ## What Are Skills?
 
@@ -18,7 +18,7 @@ git clone https://github.com/thejordanleopold/claude-code-skills-distilled ~/.cl
 cp -r claude-code-skills-distilled/debugging ~/.claude/skills/
 ```
 
-## Skills (39 total)
+## Skills (42 total)
 
 Every skill is also a slash command — type `/skill-name` to invoke directly, or let Claude auto-load it when your prompt matches its triggers.
 
@@ -60,6 +60,10 @@ Every skill is also a slash command — type `/skill-name` to invoke directly, o
 | `/security-hardening` | Security headers, rate limiting, secrets management, container hardening, Terraform/K8s IaC security | Hardening an application, service, or infrastructure configuration |
 | `/offensive-security` | Recon, web app attacks, Linux/Windows privesc, Active Directory, password attacks, lateral movement, cloud/container offensive | Authorized penetration testing, CTF challenges, or red team exercises |
 | `/ai-security` | 7-threat taxonomy (prompt injection, tool abuse, credential exposure, behavioral drift), MCP server audit, 3σ behavioral baselining | Auditing AI agents, LLM integrations, or MCP servers for security vulnerabilities |
+| `/skill-scanner` | Scans Claude Code skill files for 11 attack vectors (memory-poison, hook exploit, conftest RCE, symlink exfil, supply chain), deobfuscation, SHA-256 baseline | Before installing any third-party skill; after any suspicious agent behavior |
+| `/mcp-auditor` | Audits MCP server config files and live tool descriptions for 11 poisoning patterns across 28 AI agent config locations | Before activating a new MCP server; after agent compromise |
+| `/prompt-injection-tester` | Tests system prompts against 225+ adversarial probes (82 extraction + 143 injection), produces 0-100 trust score, CI/CD gate | Before deploying a system prompt to production |
+| `/agent-incident-response` | P0–P3 triage, containment, forensics, CLAUDE.md/credential recovery, post-incident hardening | When an AI agent has been compromised or behaved unexpectedly |
 
 ### Performance
 

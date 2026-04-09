@@ -237,7 +237,30 @@ These patterns signal AI-generated UI without design intent:
 | Neon/outer glow shadows | Subtle or no shadows per design system |
 | Oversaturated accent colors (>80% saturation) | Measured accent within constraints |
 
----
+**8 specific forbidden patterns:**
+| Pattern | Banned Form | Use Instead |
+|---------|-------------|-------------|
+| Neon glows | `box-shadow: 0 0 20px #accent` | Muted tinted `box-shadow` (hue-matched, low opacity) |
+| Pure black text | `color: #000` | `zinc-900` or equivalent dark gray |
+| Oversaturated accents | Saturation >80% | Desaturate accent to blend with neutrals |
+| Gradient text | `background-clip: text` on large headings | Solid color or 1-stop gradient max |
+| Generic stock avatars | Generic SVG "egg" user icon | Initials/monogram component or omit |
+| Rounded fake numbers | "1,234" displayed as "1.2K" arbitrarily | Show real data, or label explicitly as "example" |
+| Default 3-column card grid | Equal-width 3-card feature row | 2-column zig-zag, asymmetric grid, or horizontal scroll |
+| Lorem ipsum in shipped UI | Filler text that will reach production | Real content or named placeholder (`[Client Name Here]`) |
+
+## Interactive State Completeness Rule
+
+Every component must implement all four data states before it is considered complete:
+
+| State | Requirement |
+|-------|-------------|
+| **Loading** | Skeleton layout matching component shape, or contextual spinner with `aria-busy="true"` |
+| **Empty** | Zero-state illustration or message explaining what goes here + a call-to-action to populate it |
+| **Error** | Clear human-readable message, specific to what failed, with a retry action |
+| **Success** | Confirmation feedback or updated content — never silently succeed |
+
+A component missing any of these four states is incomplete and must not ship.
 
 ## Content Standards
 

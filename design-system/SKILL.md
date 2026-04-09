@@ -53,7 +53,29 @@ Rate on three axes to anchor all design decisions:
 
 ---
 
+## Design Preset Archetypes
+
+When clients ask for a direction ("make it modern", "premium", "bold"), anchor to one of these named presets:
+
+| Preset | Signature Traits | Best For |
+|--------|-----------------|----------|
+| **Minimalist Modern** | Whitespace-dominant, single accent, max 2 fonts, subtle 0-10% opacity shadows | SaaS, productivity, professional tools |
+| **Bold Brutalist** | High contrast (black/white/red), raw typography 700-900 weight, zero border-radius, no decorative elements | Creative agencies, portfolios, bold brands |
+| **Soft Neumorphic** | Inner shadows (light + dark), muted pastel palette, subtle depth, rounded 12-20px corners | Health, wellness, meditation apps |
+| **Glass Aesthetic** | `backdrop-blur` + transparency, 1px inner border `border-white/10`, vivid single accent, layered surfaces | Fintech, premium dashboards, iOS-style apps |
+| **Timeless Classic** | Serif display font, editorial grid, conservative 3-4 color palette, WCAG AAA accessible | Enterprise, government, accessibility-first |
+| **Bleeding Edge Experimental** | Kinetic type, asymmetric layout, motion-first, unconventional grid (2fr 1fr), scroll-driven reveals | Tech showcases, innovation labs, creative portfolios |
+
+---
+
 ## Phase 3: Color Palette
+
+### 60-30-10 Color Rule
+
+Every palette must allocate by visual weight:
+- **60% dominant neutral** — backgrounds, surfaces, containers
+- **30% secondary** — body text, borders, inactive states, supporting UI
+- **10% accent** — CTAs, interactive focus, highlights, brand moments
 
 ### Mandatory Constraints
 
@@ -125,8 +147,9 @@ font-size: clamp(1.5rem, 3vw, 2rem);  /* scales between 24px and 32px */
 
 ## Phase 5: Spacing System
 
-- **4pt/8dp incremental system:** 4, 8, 12, 16, 24, 32, 48, 64, 96px
-- Use the 8dp grid as default; 4dp for fine-tuning
+- **8pt grid — canonical scale:** 0, 4, 8, 12, 16, 20, 24, 32, 40, 48, 64px
+- Use the 8pt grid as default; 4pt for fine-tuning within components
+- **Proximity principle:** related elements 8-16px apart; section breaks 32-48px; page-level sections 64px+
 - CSS Grid over Flexbox calc hacks
 - Max-width containment: 1400px centered for content
 - Touch targets minimum 44px on mobile

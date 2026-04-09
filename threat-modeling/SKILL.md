@@ -27,6 +27,8 @@ Identify threats before looking at code. Understanding what can go wrong is prer
 - Code-level security review (use security-review skill)
 - Dependency vulnerability scanning (use security-hardening skill)
 - Compliance gap analysis (use compliance-and-governance skill)
+- Scanning installed skills for malicious payloads (use `skill-scanner`)
+- Auditing MCP configurations for poisoned tool descriptions (use `mcp-auditor`)
 
 ---
 
@@ -133,6 +135,57 @@ Score each identified threat to prioritize:
 
 ---
 
+## Phase 3b: Detection Validation Loop (Purple Team)
+
+After STRIDE/DREAD scoring, validate that defensive controls can actually detect each identified threat. For every threat, work through:
+
+| Question | Pass / Fail |
+|----------|-------------|
+| Is this attack technique logged anywhere? | |
+| Would a SOC alert fire on that log event? | |
+| Is there a detection rule covering this TTP? | |
+| Has the rule been tested with real attack data? | |
+| Is there a documented response playbook? | |
+
+Use this finding format for detection gaps:
+```
+[PURPLE] FINDING: <gap name>
+Severity: <Critical/High/Medium/Low>
+MITRE ATT&CK: <Tactic> — <TID>
+Detection gap: <what the blue team cannot currently see>
+Recommended rule: <log source + detection logic>
+Validation test: <how to confirm the detection fires>
+```
+
+Critical finding = attack technique has zero detection coverage and would be completely invisible to defenders.
+
+---
+
+## Phase 3c: PTES Threat Chain (MITRE ATT&CK)
+
+Structure threat identification across the full attack lifecycle. For each entry point or trust boundary, walk the 7-tactic chain:
+
+| Tactic | Key Questions |
+|--------|--------------|
+| **Reconnaissance** | What OSINT is exposed? Public endpoints? Service banners? |
+| **Initial Access** | Phishing vectors? Public exploits? Credential stuffing? |
+| **Execution** | Code execution paths? Unsafe deserialization? AI output eval? |
+| **Persistence** | Backdoor opportunities? Weak cron jobs? Stale tokens? |
+| **Privilege Escalation** | Sudo misconfigs? IAM over-privilege? IDOR? |
+| **Lateral Movement** | Network segmentation gaps? Credential reuse? Service-to-service trust? |
+| **Exfiltration** | Data egress paths? Unmonitored channels? Large query limits? |
+
+For each identified threat, use this finding format:
+```
+[RED] FINDING: <name>
+Severity: <Critical/High/Medium/Low>
+MITRE: <TID>
+PoC: <numbered steps to reproduce>
+Remediation: <specific fix>
+```
+
+---
+
 ## Phase 4: Agentic AI Security (OWASP Agentic AI)
 
 When reviewing AI agent systems — these are distinct from traditional web app threats:
@@ -145,11 +198,19 @@ When reviewing AI agent systems — these are distinct from traditional web app 
 | **ASI04 Code Execution** | Unsafe AI-generated code executed | Sandbox execution, human approval for destructive ops |
 | **ASI05 Data Exfiltration** | Agent leaks data through tool calls | Monitor outbound data, restrict tool scopes |
 
-**CI/CD-specific agent attack vectors:**
-- `${{ github.event.* }}` in prompt fields (prompt injection via PR titles)
-- `eval()`/`exec()` consuming AI output (arbitrary code execution)
-- `pull_request_target` with PR checkout (privilege escalation)
-- Wildcard tool allowlists (permission scope too broad)
+**CI/CD Agent Attack Vectors — 9-Vector Taxonomy:**
+
+| Vector | Description | Example |
+|--------|-------------|---------|
+| **A. Env Var Intermediary** | Attacker data flows through `env:` blocks to AI prompt fields — no visible `${{ }}` expressions | PR title → env var → AI prompt |
+| **B. Direct Expression Injection** | `${{ github.event.* }}` embedded directly in AI prompt or instruction fields | `prompt: "Review ${{ github.event.pull_request.title }}"` |
+| **C. CLI Data Fetch** | `gh` CLI commands in prompts fetch attacker-controlled content at runtime | `gh issue view` inside prompt template |
+| **D. PR Target + Checkout** | `pull_request_target` trigger combined with checkout of PR head code | Elevated token + untrusted code |
+| **E. Error Log Injection** | CI error output or build logs fed to AI prompts carry attacker payloads | Malicious compile error → AI executes payload |
+| **F. Subshell Expansion** | Restricted tools like `echo` allow subshell bypass (`echo $(env)`) | Allowlist bypass via shell expansion |
+| **G. Eval of AI Output** | AI response flows to `eval`, `exec`, or unquoted `$()` in subsequent steps | AI generates shell command → step executes it |
+| **H. Dangerous Sandbox Configs** | `danger-full-access`, `Bash(*)`, `--yolo` disable safety protections | Any tool allowed, no approval gate |
+| **I. Wildcard Allowlists** | `allowed_non_write_users: "*"` permits any actor to trigger privileged AI actions | Unauthenticated trigger via PR comment |
 
 ---
 

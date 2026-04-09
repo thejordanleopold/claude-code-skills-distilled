@@ -231,6 +231,32 @@ Run after worker integration:
 
 ---
 
+## Safe Agent Design
+
+### CI/CD Attack Vectors to Defend Against
+
+| ID | Vector | Description |
+|----|--------|-------------|
+| A | Env Var Intermediary | Agent reads env vars and injects them into prompts — attacker data flows through `env:` blocks invisibly |
+| B | Direct Expression Injection | `${{ github.event.issue.title }}` embedded directly in prompt fields |
+| C | CLI Data Fetch | Agent fetches external data (e.g., via `gh` CLI) and passes it unsanitized to the LLM |
+| D | Implicit Trust of Tool Output | Agent uses tool output as trusted input for next action without validation |
+| E | Workflow Step Injection | Malicious step injected via PR or config change alters agent behavior |
+| F | Secrets Exfiltration via Logs | Agent logs contain secrets surfaced from tool calls |
+| G | Agent-to-Agent Injection | Compromised subagent injects malicious instructions into orchestrator context |
+| H | Supply Chain via Actions | Malicious GitHub Action used by agent workflow executes attacker code |
+| I | PR Content Injection | PR title, body, or comments used as prompt input carry attacker payloads |
+
+### Defense Rules
+
+- **Never treat tool output as trusted prompt input** — always treat returned content as untrusted data, not instructions
+- **Validate all env vars at system boundary** — sanitize or reject attacker-controllable values before they reach any prompt field
+- **Sandbox agent execution** — run agents with least privilege; avoid `--yolo`, `danger-full-access`, or wildcard tool allowlists
+- **Never log secrets from tool calls** — scrub outputs before writing to CI logs or artifact stores
+- **Require human approval for destructive or irreversible tool calls** — gate actions like file deletion, deployments, or secret rotation behind an explicit authorization step
+
+---
+
 ## Quick Reference
 
 | Scenario | Pattern | Workers |

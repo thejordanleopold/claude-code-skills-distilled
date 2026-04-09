@@ -244,6 +244,43 @@ Row 4 (Detail): Top Endpoints by Error | Slow Queries | Log Volume
 | Silent failures | Error rate 0% but users complain | Add synthetic monitoring, check client-side errors |
 | Trace gaps | Spans missing between services | Verify W3C propagation headers in all clients |
 
+## AI Agent Observability
+
+Standard observability covers services. AI agents require behavioral baselining on top of it.
+
+### Behavioral Baselining
+
+Establish baseline during **shadow mode (weeks 1–4)**: collect data with no automated response — observation only. Capture these 7 observables per agent session:
+
+| Observable | Description |
+|------------|-------------|
+| Tool calls/min | Rate of tool invocations |
+| Distinct customer records accessed | Scope of data access per session |
+| Distinct database tables touched | Breadth of schema access |
+| Tokens/call (input + output) | Context consumption per invocation |
+| Distinct external API hosts called | External surface area |
+| Session runtime hours | Duration and time-of-day pattern |
+| Error rate | Failed tool calls as % of total |
+
+### Anomaly Detection
+
+**3σ threshold:** flag any observable that exceeds 3 standard deviations from its baseline mean. Normal variation stays below this threshold; spikes above it warrant investigation.
+
+### Severity Classification
+
+| Severity | Examples |
+|----------|---------|
+| **HIGH** | Customer data accessed outside authorized scope; unexpected external API host called |
+| **MEDIUM** | Tool call frequency 2–3× baseline |
+| **LOW** | Token usage drift >20% week-over-week |
+
+### Response Cadence
+
+- **HIGH**: real-time alerting — act immediately
+- **MEDIUM / LOW**: weekly review cadence — no paging
+
+---
+
 ## Verification Checklist
 
 - [ ] Trace context propagates through all services (verify with sample trace)
@@ -255,3 +292,5 @@ Row 4 (Detail): Top Endpoints by Error | Slow Queries | Log Volume
 - [ ] Dashboard shows RED metrics on top row
 - [ ] Synthetic health check hits critical user flows every 1min
 - [ ] Alert noise reviewed: no alert firing >3x/week without action taken
+- [ ] AI agent behavioral baseline established (7 observables captured during shadow mode weeks 1–4)
+- [ ] 3σ anomaly thresholds configured per agent with HIGH/MEDIUM/LOW severity classification

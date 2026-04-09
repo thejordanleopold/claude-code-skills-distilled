@@ -57,6 +57,12 @@ Always use `--metrics=off` during audits.
 
 For injection (SQLi, SSRF, path traversal): use taint-mode rules — they track data from source to sink through function calls.
 
+**Test-driven rule creation:** Write test cases BEFORE writing the rule pattern.
+1. Define true positives (code that should match) and true negatives (safe code that must not match)
+2. Run `semgrep --test` to verify: iterate on the AST pattern until all tests pass
+3. For data-flow vulnerabilities, use `mode: taint` with explicit `sources` and `sinks`
+4. Only finalize the rule after the test suite is green — pattern-first rules have high FP rates
+
 ### CodeQL (Deep Analysis)
 
 ```bash
@@ -160,12 +166,17 @@ grep -r "verify.*=.*false" src/
 
 ## Phase 6: Sharp Edges Analysis
 
-APIs where the easy path leads to insecurity:
+**Pit of Success** — secure usage must be the path of least resistance. Evaluate through three adversary lenses:
+- **Scoundrel**: Can a malicious developer disable security via configuration?
+- **Lazy Developer**: Does copy-pasting the first example produce insecure code?
+- **Confused Developer**: Can parameters be swapped without type errors, producing silent misuse?
 
-| Type | Example | Risk | Fix |
-|------|---------|------|-----|
+| Category | Example | Risk | Fix |
+|----------|---------|------|-----|
 | Algorithm footguns | JWT `alg: none`, `hash("crc32", $password)` | Wrong algorithm silently accepted | Allowlist algorithms |
 | Dangerous defaults | `timeout=0` (no timeout), `verify=False` (skip TLS) | Security disabled by default | Secure defaults only |
+| Primitive vs Semantic APIs | `encrypt(msg, bytes, bytes)` — key/nonce swappable | Silent misuse with no type error | Named parameters or wrapper types |
+| Configuration cliffs | `verify_ssl: false` disables all cert validation | One flag nukes entire security layer | Granular options; warn on disable |
 | Silent failures | Auth check returns `true` on exception | Fail-open | Fail-closed on error |
 | Stringly-typed security | `permissions = "read,write,admin"` | Easy to misparse or inject | Use typed enums or arrays |
 
@@ -199,18 +210,19 @@ function safeCompare(a: string, b: string): boolean {
 
 ## Variant Analysis
 
-When you find one vulnerability, systematically search for similar instances:
+When you find one vulnerability, systematically search for similar instances using this 5-step workflow:
 
 ```
-1. Understand root cause (not the symptom)
-2. Create exact pattern for the known instance
-3. Grep for the exact pattern
-4. Iteratively generalize — change one element at a time
-5. Stop when false positive rate >50%
-6. Search the ENTIRE codebase, not just the module
+1. Understand root cause — identify the exact condition and data flow, not just the symptom
+2. Create an exact match — write a pattern that matches only the known instance; confirm it fires
+3. Identify abstraction points — what can be generalized? (variable name, function, call site, module)
+4. Generalize one element at a time — change one thing per iteration; re-run and review new matches
+5. Triage — stop when false positive rate exceeds 50%; document and prioritize real findings
 ```
 
-One confirmed SQL injection often indicates 5+ variants elsewhere.
+Search the ENTIRE codebase, not just the module where the original was found.
+One confirmed SQL injection often has 5+ variants across different query paths.
+Use Semgrep for fast pattern matching; escalate to CodeQL for interprocedural data flow.
 
 ---
 

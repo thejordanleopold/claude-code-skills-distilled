@@ -225,6 +225,45 @@ Capture rationalizations from baseline testing:
 
 ---
 
+## Quantitative Eval Framework
+
+Before publishing any skill, verify it actually changes Claude's behavior:
+
+1. **Run a baseline** — execute the target scenario WITHOUT the skill loaded. Document the output verbatim.
+2. **Run with the skill** — execute the same scenario WITH the skill loaded.
+3. **Score on 3–5 behavioral markers** — concrete, binary checks:
+   - Does the specific framework or process appear in the output?
+   - Is domain-specific vocabulary used correctly?
+   - Is the output structured per the skill's specified format?
+   - Are the required phases or steps present?
+   - Are prohibited patterns absent?
+4. **Target: >80% marker pass rate** before publishing. Below 80% means the skill content is too generic or the description isn't loading it reliably.
+5. **If with-skill output equals baseline output**, the skill is not working — either the description needs sharper trigger conditions or the content needs to be more prescriptive.
+
+---
+
+## Description Optimization Loop
+
+Treat the description as a retrieval query that must match how users actually phrase requests.
+
+1. **Write 10 realistic trigger prompts** — things real users would type, not abstract descriptions of the skill.
+2. **Test each**: does Claude load the skill for that prompt? Track pass/fail.
+3. **Iterate on trigger terms** until ≥8/10 prompts activate the skill.
+
+**Common failure:** description summarizes the workflow instead of listing trigger conditions.
+
+```yaml
+# BAD: workflow summary
+description: "Covers the full lifecycle of skill development from drafting to publishing."
+
+# GOOD: trigger conditions with keyword list
+description: "Use when creating a new SKILL.md, editing an existing skill for quality or discoverability,
+  or testing whether a skill changes Claude's behavior. Triggers: 'create a skill', 'edit skill',
+  'skill description', 'SKILL.md', 'skill not triggering'."
+```
+
+---
+
 ## Skill Creation Checklist
 
 ### RED Phase
@@ -253,6 +292,7 @@ Capture rationalizations from baseline testing:
 
 ### Deployment
 - [ ] Validate frontmatter, naming, structure
+- [ ] **Run `skill-scanner` on the skill directory before installing** — check for hooks, scripts, symlinks, payload patterns
 - [ ] Commit skill and push
 - [ ] Test one more time in clean context
 - [ ] Do NOT batch-create multiple skills without testing each

