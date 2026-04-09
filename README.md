@@ -1,6 +1,6 @@
 # Claude Code Skills Distilled
 
-31 production-quality skills for [Claude Code](https://claude.ai/code), synthesized from 16 community skill repositories into focused, high-signal reference files.
+39 production-quality skills for [Claude Code](https://claude.ai/code), synthesized from 17 community skill repositories into focused, high-signal reference files.
 
 ## What Are Skills?
 
@@ -18,7 +18,7 @@ git clone https://github.com/thejordanleopold/claude-code-skills-distilled ~/.cl
 cp -r claude-code-skills-distilled/debugging ~/.claude/skills/
 ```
 
-## Skills (31 total)
+## Skills (39 total)
 
 Every skill is also a slash command — type `/skill-name` to invoke directly, or let Claude auto-load it when your prompt matches its triggers.
 
@@ -59,6 +59,7 @@ Every skill is also a slash command — type `/skill-name` to invoke directly, o
 | `/security-review` | OWASP Top 10:2025, ASVS 5.0 levels, Semgrep/CodeQL, variant analysis, constant-time crypto | Auditing code for specific vulnerability classes |
 | `/security-hardening` | Security headers, rate limiting, secrets management, container hardening, Terraform/K8s IaC security | Hardening an application, service, or infrastructure configuration |
 | `/offensive-security` | Recon, web app attacks, Linux/Windows privesc, Active Directory, password attacks, lateral movement, cloud/container offensive | Authorized penetration testing, CTF challenges, or red team exercises |
+| `/ai-security` | 7-threat taxonomy (prompt injection, tool abuse, credential exposure, behavioral drift), MCP server audit, 3σ behavioral baselining | Auditing AI agents, LLM integrations, or MCP servers for security vulnerabilities |
 
 ### Performance
 
@@ -73,6 +74,11 @@ Every skill is also a slash command — type `/skill-name` to invoke directly, o
 |---------|-------------|-------------|
 | `/design-system` | Design tokens (primitive → semantic → component), color constraints, typography, spacing, DESIGN.md | Establishing the visual design language for a product |
 | `/ui-components` | WCAG 2.1 AA accessibility, focus management, responsive design, AI slop anti-patterns | Building or reviewing UI components |
+| `/animation` | Framer Motion variants, AnimatePresence, layoutId shared transitions, spring physics presets, useReducedMotion | Adding motion and transitions to a React UI |
+| `/expo-app-design` | Expo Router, native tabs, form sheets, Reanimated worklets, scroll-driven animations, platform-specific patterns | Building a mobile UI with Expo/React Native |
+| `/expo-tailwind` | NativeWind v5, Tailwind v4 in Expo, metro config, CSS-to-RN bridging, Apple system colors, dark mode | Setting up Tailwind CSS in an Expo project |
+| `/remotion` | Frame-based animation with useCurrentFrame() + interpolate(), TransitionSeries, audio sync, FFmpeg rendering | Building programmatic videos or data-driven animations in React |
+| `/buttercut` | WhisperX transcription → FFmpeg frame analysis → Buttercut rough cut → Final Cut Pro XML, 3-phase video workflow | Processing raw video footage into a structured rough cut |
 
 ### Shipping
 
@@ -88,6 +94,7 @@ Every skill is also a slash command — type `/skill-name` to invoke directly, o
 | `/prompt-engineering` | Few-shot design, chain-of-thought, structured output, system prompt architecture, A/B testing prompts | Designing or improving a prompt for an LLM |
 | `/rag-and-vector-search` | Chunking strategy, embedding model selection, vector DB setup, RAGAS evaluation | Building a RAG pipeline or semantic search system |
 | `/llm-cost-optimization` | Model routing, prompt caching, token auditing, cost governance per query | LLM API costs are too high or growing unsustainably |
+| `/mcp-development` | MCP protocol (tools/resources/prompts), TypeScript SDK, tool annotations, Zod schemas, evaluation creation | Building a Model Context Protocol server for Claude |
 
 ### Data & Operations
 
@@ -99,6 +106,7 @@ Every skill is also a slash command — type `/skill-name` to invoke directly, o
 | `/data-engineering` | ELT pipelines, idempotent loads, data quality validation, dimensional modeling, analytics events | Building data pipelines or warehouse integrations |
 | `/workflow-automation` | Spec-driven workflow design, Temporal SDK, human-in-the-loop with timeouts, idempotent steps | Automating a multi-step business process |
 | `/third-party-integration` | Adapter pattern, webhook signature verification, Stripe idempotency, resilient API clients | Integrating with external APIs, payment processors, or webhook endpoints |
+| `/document-processing` | pypdf/pdfplumber/reportlab for PDF, pandas/openpyxl for spreadsheets, financial model color coding, formula verification | Processing PDF files or Excel/CSV spreadsheets programmatically |
 
 ### Meta
 
@@ -117,7 +125,7 @@ Every skill is also a slash command — type `/skill-name` to invoke directly, o
 
 ## Sources
 
-Synthesized and distilled from 15 community repositories:
+Synthesized and distilled from 17 skill repositories:
 
 | Repository | Author |
 |-----------|--------|
@@ -136,3 +144,5 @@ Synthesized and distilled from 15 community repositories:
 | [superpowers](https://github.com/obra/superpowers) | obra |
 | [skills](https://github.com/trailofbits/skills) | trailofbits |
 | [ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | nextlevelbuilder |
+| startup-iq private skills (animation, Remotion, Expo, Buttercut, design) | thejordanleopold |
+| Darion private skills (AI security, MCP development, document processing) | private |
