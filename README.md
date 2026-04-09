@@ -103,4 +103,22 @@ cp -r claude-code-skills-distilled/debugging ~/.claude/skills/
 
 ## Sources
 
-Synthesized from 16 community repositories including trailofbits, gstack, alirezarezvani, snyk, agentic-framework, superpowers, karpathy, and more — distilled into a single coherent library.
+Synthesized and distilled from 15 community repositories:
+
+| Repository | Author |
+|-----------|--------|
+| [agent-skills](https://github.com/addyosmani/agent-skills) | addyosmani |
+| [claude-agentic-framework](https://github.com/dralgorhythm/claude-agentic-framework) | dralgorhythm |
+| [claude-skills](https://github.com/alirezarezvani/claude-skills) | alirezarezvani |
+| [awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) | ComposioHQ |
+| [gstack](https://github.com/garrytan/gstack) | garrytan |
+| [andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills) | forrestchang |
+| [mastra skills](https://github.com/mastra-ai/skills) | mastra-ai |
+| [claude-code-owasp](https://github.com/agamm/claude-code-owasp) | agamm |
+| [playwright-skill](https://github.com/lackeyjb/playwright-skill) | lackeyjb |
+| [secskills](https://github.com/trilwu/secskills) | trilwu |
+| [studio-recipes](https://github.com/snyk/studio-recipes) | snyk |
+| [stitch-skills](https://github.com/google-labs-code/stitch-skills) | google-labs-code |
+| [superpowers](https://github.com/obra/superpowers) | obra |
+| [skills](https://github.com/trailofbits/skills) | trailofbits |
+| [ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | nextlevelbuilder |
