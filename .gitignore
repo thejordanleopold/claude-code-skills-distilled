@@ -2,3 +2,12 @@ PROCESS.md
 .DS_Store
 .agentseal-baseline.txt
 .claude/
+
+# Editor artifacts
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Shell script leftovers
+/tmp/
