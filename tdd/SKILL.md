@@ -126,14 +126,27 @@ class InMemoryTaskRepository implements TaskRepository {
 }
 ```
 
-**Rule:** Prefer Fakes for repository/storage. Use Mocks only for side effects you must verify (email, events, external APIs).
+**Rule — Mock at Boundaries Only:**
+
+| Layer | Test Double | Why |
+|-------|-------------|-----|
+| Databases / repositories | Fake (in-memory) | Not a boundary — internal infrastructure |
+| External APIs | Mock or Fake client | Boundary — controls are external |
+| Email / SMS / push | Mock | Boundary — verify the send happened |
+| File system | Fake (in-memory FS) | Not a boundary — implementation detail |
+| Internal modules | Real implementation | Not a boundary — use the real thing |
+
+Mock at the boundary of your system. Never mock your own domain objects.
 
 ---
 
 ## Test Structure (AAA Pattern)
 
+**Test naming:** `[unit] should [behavior] when [condition]`
+Examples: `createUser should throw when email is duplicate`, `calculateTax should return 0 when subtotal is 0`
+
 ```typescript
-it('calculates tax for positive subtotal', () => {
+it('calculateTax should return 8.00 when subtotal is 100 and rate is 8%', () => {
   // Arrange
   const subtotal = 100.00;
   const taxRate = 0.08;

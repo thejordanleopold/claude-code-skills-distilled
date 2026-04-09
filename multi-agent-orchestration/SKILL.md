@@ -1,6 +1,11 @@
 ---
 name: multi-agent-orchestration
-description: Use when facing 2+ tasks that can be decomposed and delegated to subagents, when coordinating parallel workstreams across a codebase, when executing implementation plans with independent tasks, or when multiple agents need to work in the same repository without conflicts
+description: |
+  Use when facing 2+ tasks that can be decomposed and delegated to subagents, when coordinating
+  parallel workstreams across a codebase, when executing implementation plans with independent
+  tasks, or when multiple agents need to work in the same repository without conflicts. Triggers:
+  "run in parallel", "dispatch agents", "subagent", "parallel tasks", "agent coordination",
+  "orchestrate", "multiple agents", "swarm", "worker agents", "concurrent work".
 ---
 
 # Multi-Agent Orchestration

@@ -28,6 +28,8 @@ Systematic code review across six dimensions with confidence-scored findings.
 
 ---
 
+**Rule #1: Review tests first.** Tests reveal intent and coverage before you read the implementation. Check: Do tests exist? Do they test the right things? Are edge cases covered?
+
 ## The 6-Axis Framework
 
 Rate each dimension and note specific findings:
@@ -131,6 +133,8 @@ Separate passes catch different things. A reviewer focused on architecture misse
 
 ## Finding Format
 
+**Acknowledge what's done well** — always include at least one specific positive observation. Specific praise motivates good practices and builds trust.
+
 Each finding:
 ```
 [SEVERITY] [Axis] Short title
@@ -143,6 +147,9 @@ Evidence: [Specific code that demonstrates the issue]
 
 Fix: [Concrete recommendation]
 ```
+
+What's Done Well:
+- [Specific positive observation]
 
 ---
 

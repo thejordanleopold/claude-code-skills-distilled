@@ -33,19 +33,7 @@ Defense-in-depth configuration, secrets management, dependency auditing, and inc
 
 ## Defense-in-Depth Layers
 
-```
-+--------------------------------------+
-|  Perimeter: WAF, DDoS, Bot Detection |
-+--------------------------------------+
-|  Network: Firewall, Zero-Trust, VPN  |
-+--------------------------------------+
-|  Application: Auth, Headers, Input   |
-+--------------------------------------+
-|  Data: Encryption, Key Management   |
-+--------------------------------------+
-```
-
-Each layer assumes the one above it has failed.
+Perimeter → Network → Application → Data. Each layer assumes the one above has failed. No single control is sufficient.
 
 ---
 
@@ -179,16 +167,7 @@ Vulnerability found
 
 ## Supply Chain Risk Assessment
 
-For every new dependency, evaluate:
-
-| Risk Factor | Question | Flag If |
-|-------------|---------|---------|
-| Maintainer count | Who maintains this? | Single maintainer |
-| Activity | When was the last commit? | >1 year inactive |
-| Popularity | How widely used? | <1k downloads/week |
-| Security history | Past CVEs? | Multiple CVEs |
-| High-risk features | FFI, eval, shell exec? | Yes — review carefully |
-| Maintainer identity | Anonymous/pseudonymous? | Yes — extra scrutiny |
+Flag new dependencies that have: single maintainer, >1 year inactive, <1k downloads/week, multiple CVEs, or high-risk features (FFI, eval, shell exec). Anonymous maintainers warrant extra scrutiny.
 
 ---
 
@@ -234,31 +213,50 @@ git push --force --tags
 ## CORS Configuration
 
 ```typescript
-import cors from 'cors';
-
-// Production: explicit allowlist
 app.use(cors({
-  origin: ['https://app.company.com', 'https://www.company.com'],
+  origin: ['https://app.company.com', 'https://www.company.com'],  // Explicit allowlist
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
-
-// NEVER in production:
-app.use(cors({ origin: '*' }));  // Allows any origin
+// NEVER: cors({ origin: '*' }) — allows any origin
 ```
 
 ---
 
-## Compliance Quick Reference
+## Container Security
 
-| Control | GDPR | HIPAA | PCI-DSS | SOC 2 |
-|---------|------|-------|---------|-------|
-| Encryption at rest | Required | Required | Required | Required |
-| Encryption in transit (TLS) | Required | Required | Required | Required |
-| Access control | Required | Required | Required | Required |
-| Audit logging | Required | Required | Required | Required |
-| Breach notification | 72 hours | Yes | Yes | Yes |
+```dockerfile
+FROM python:3.12-slim AS base          # Minimal base, pinned version (not :latest)
+
+FROM base AS builder                    # Multi-stage: isolate build deps
+RUN pip install --user -r requirements.txt
+
+FROM base AS runtime
+RUN useradd -r -u 1001 appuser
+USER appuser                            # Never run as root
+COPY --from=builder /root/.local /home/appuser/.local
+COPY --chown=appuser:appuser . .
+```
+
+Rules: no secrets in `ENV` or `--build-arg` (use `--secret` mount); pin image digests in CI; scan with `trivy image <name>` before deploy.
+
+---
+
+## IaC Security (Terraform / Kubernetes)
+
+**Terraform:** Block all S3 public access (`block_public_acls = block_public_policy = true`). Never use wildcard IAM (`actions = ["*"]`) — enumerate specific actions and resources.
+
+**Kubernetes** — required `securityContext` for every pod:
+```yaml
+securityContext:
+  runAsNonRoot: true
+  readOnlyRootFilesystem: true
+  allowPrivilegeEscalation: false
+  capabilities: { drop: ["ALL"] }
+```
+
+Scan manifests with `trivy config k8s/` or `checkov -d .` in CI.
 
 ---
 

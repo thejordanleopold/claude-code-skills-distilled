@@ -25,7 +25,7 @@ Implement production-grade observability: logs, metrics, and traces that make sy
 ## When NOT to Use
 
 - Deployment pipelines (use deployment skill)
-- Performance optimization (observability informs it, but use performance-optimization skill)
+- Performance optimization (observability informs it, but use backend-performance or frontend-performance skill)
 - Security monitoring/SIEM (overlaps but distinct domain)
 
 ---

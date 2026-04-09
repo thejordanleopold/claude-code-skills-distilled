@@ -167,7 +167,13 @@ git branch -D feature/task-creation
 git fetch --prune  # Remove remote-tracking branches that no longer exist on remote
 ```
 
-### Phase 2: Categorize Branches
+### Phase 2: Group by Prefix, Then Categorize
+
+Group branches by prefix BEFORE categorizing — this prevents treating two independent `feature/` branches as superseding each other:
+
+```bash
+git branch -a | sort  # Groups feature/*, fix/*, chore/* together visually
+```
 
 | Category | Meaning | Delete? |
 |----------|---------|---------|
@@ -192,8 +198,20 @@ git cherry -v main feature/old-branch  # Empty = all commits in main
 
 ### Phase 4: Two Confirmation Gates
 
-1. Show what will be deleted — get explicit confirmation
-2. Execute deletions — report what was deleted
+**Gate 1 — Show, don't delete:**
+```bash
+echo "Branches to delete:"
+echo "  $safe_branches" | tr ' ' '\n'
+echo "Confirm deletion? (y/N)"
+```
+
+**Gate 2 — Execute only after explicit confirmation:**
+```bash
+git branch -d $branch    # Safe delete (fails if unmerged work)
+git branch -D $branch    # Force delete (squash-merged only — confirm first)
+```
+
+Report what was deleted, what was skipped, and why.
 
 **Never touch protected branches:** `main`, `master`, `develop`, `release/*`, `production`
 

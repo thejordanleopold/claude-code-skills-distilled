@@ -161,8 +161,17 @@ Three layers — never use raw values in components:
 
 ```
 Primitive (raw values):   --color-blue-600: #2563EB
-Semantic (purpose):       --color-primary: var(--color-blue-600)
-Component (specific):     --button-bg: var(--color-primary)
+Semantic (purpose):       --color-action-primary: var(--color-blue-600)
+Component (specific):     --button-bg: var(--color-action-primary)
+```
+
+**Name tokens by role, not color value:**
+
+```
+❌  --color-blue-500        (describes the color — breaks when brand changes)
+✅  --color-action-primary  (Primary Action color — survives brand pivots)
+✅  --color-feedback-error  (Error state — meaningful without knowing it's red)
+✅  --color-surface-raised  (Elevated surface — not "white" or "gray-50")
 ```
 
 ```css

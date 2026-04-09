@@ -1,13 +1,33 @@
 ---
 name: skill-creation
-description: Use when creating a new skill, editing an existing skill, reviewing skill quality, designing workflow-based skills with multi-step phases, or verifying skills work before deployment. Also applies when structuring skills with subagent delegation, progressive disclosure, decision trees, or phased execution
+description: |
+  Use when creating a new Claude Code skill, editing or improving an existing skill, reviewing
+  skill quality for discoverability and behavioral impact, structuring skills with subagent
+  delegation, progressive disclosure, or phased execution. Triggers: "create a skill",
+  "new skill", "edit skill", "skill quality", "SKILL.md", "skill description", "skill trigger",
+  "CSO", "skill anatomy", "when to create a skill".
 ---
 
 # Skill Creation
 
-Create effective, discoverable, and reliable skills using a test-driven approach. Covers the full lifecycle: understanding when to create a skill, structuring it for discovery and execution, testing with subagents, iterating on quality, and packaging for deployment.
+Create effective, discoverable, and reliable skills using a test-driven approach.
 
 **Core principle:** Creating skills IS Test-Driven Development applied to process documentation. If you did not watch an agent fail without the skill, you do not know if the skill teaches the right thing.
+
+## When to Use
+
+- Creating a new skill for a recurring technique or workflow
+- Editing an existing skill to improve quality or add missing patterns
+- Reviewing a skill's description for CSO (triggering conditions, not workflow summary)
+- Packaging skill content with progressive disclosure (SKILL.md + references/)
+- Verifying a skill changes Claude's behavior before publishing
+
+## When NOT to Use
+
+- Project-specific conventions (put in CLAUDE.md instead)
+- One-off solutions that won't recur across projects
+- Mechanical constraints enforceable by linting or validation (automate it)
+- Standard practices well-documented in official docs
 
 ## When to Create a Skill
 
@@ -16,12 +36,6 @@ Create effective, discoverable, and reliable skills using a test-driven approach
 - You would reference this again across projects
 - Pattern applies broadly (not project-specific)
 - Others would benefit
-
-**Do not create for:**
-- One-off solutions
-- Standard practices well-documented elsewhere
-- Project-specific conventions (put in CLAUDE.md instead)
-- Mechanical constraints enforceable with regex/validation (automate it)
 
 ---
 

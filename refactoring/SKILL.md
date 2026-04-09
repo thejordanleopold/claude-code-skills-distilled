@@ -45,6 +45,14 @@ Improve code structure without changing behavior.
 
 **Never combine refactoring with feature changes in the same commit.** This makes regressions impossible to isolate.
 
+### Two Hats Rule
+
+Never mix refactoring and feature/behavior changes in the same commit.
+- **Refactoring hat:** change structure, NOT behavior — tests must pass unchanged before and after
+- **Feature hat:** change behavior — separate commit, separate review
+
+When you notice a bug or improvement opportunity during refactoring: note it, finish the refactor, then switch hats and address it separately.
+
 ---
 
 ## Common Refactorings

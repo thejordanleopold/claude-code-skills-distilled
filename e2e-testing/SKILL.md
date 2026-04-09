@@ -211,66 +211,63 @@ describe('POST /api/tasks', () => {
 
 ## Property-Based Testing
 
-Test invariants over large random input spaces:
-
-```typescript
-import fc from 'fast-check';
-
-// Property: calculateTax(subtotal, rate) is always non-negative
-test('tax is never negative', () => {
-  fc.assert(
-    fc.property(
-      fc.float({ min: 0 }),   // any non-negative subtotal
-      fc.float({ min: 0, max: 1 }),  // any rate 0-100%
-      (subtotal, rate) => {
-        const tax = calculateTax(subtotal, rate);
-        return tax >= 0;
-      }
-    )
-  );
-});
-
-// Property: parsing and serializing is lossless
-test('JSON round-trip preserves task', () => {
-  fc.assert(
-    fc.property(
-      fc.record({ title: fc.string(), status: fc.constantFrom('pending', 'done') }),
-      (task) => {
-        const serialized = JSON.stringify(task);
-        const parsed = JSON.parse(serialized);
-        return parsed.title === task.title && parsed.status === task.status;
-      }
-    )
-  );
-});
-```
-
-Use when: complex input validation, parsing/serialization, mathematical invariants, data transformations.
+Test invariants over large random input spaces using `fast-check`. Write one `fc.assert(fc.property(arbitraries, (input) => invariant))` per property. Use when: input validation, parsing/serialization, mathematical invariants. Target: `calculateTax` always returns `>= 0`; JSON round-trip preserves all fields; sort is idempotent.
 
 ---
 
-## Browser Security Boundaries
+## API Mocking with page.route()
 
-Playwright tests run with real browser security:
+Use `page.route()` to intercept API calls — avoids real network I/O in E2E tests:
 
 ```typescript
-// Cross-origin requests: configure CORS in test environment
-// Cookies: use context.addCookies() not document.cookie
-// localStorage: use page.evaluate() or page.addInitScript()
-// Auth: use storageState to reuse authenticated sessions
+test('shows error banner on API failure', async ({ page }) => {
+  // Intercept before navigating
+  await page.route('**/api/tasks', route =>
+    route.fulfill({ status: 500, body: JSON.stringify({ error: 'Server error' }) })
+  );
 
-// Save auth state once, reuse across tests (faster than re-logging in)
-const authFile = 'tests/.auth/user.json';
+  await page.goto('/tasks');
+  await expect(page.locator('[data-testid="error-banner"]')).toBeVisible();
+});
+```
+
+Use when: testing error states, slow-network scenarios, or avoiding rate limits in CI.
+
+---
+
+## Accessibility Testing
+
+```typescript
+import AxeBuilder from '@axe-core/playwright';
+
+test('checkout flow is accessible', async ({ page }) => {
+  await page.goto('/checkout');
+
+  const results = await new AxeBuilder({ page })
+    .withTags(['wcag2a', 'wcag2aa'])
+    .analyze();
+
+  expect(results.violations).toEqual([]);
+});
+```
+
+Run axe on every critical flow. Violations include ARIA errors, contrast failures, and missing labels. Pair with WCAG 2.1 AA from the ui-components skill.
+
+---
+
+## Auth State Reuse
+
+```typescript
+// Save auth once, reuse across tests (avoids re-logging in each time)
 setup('authenticate', async ({ page }) => {
   await page.goto('/login');
   await page.fill('[name=email]', 'test@example.com');
   await page.fill('[name=password]', 'password');
   await page.click('[type=submit]');
-  await page.context().storageState({ path: authFile });
+  await page.context().storageState({ path: 'tests/.auth/user.json' });
 });
 
-// In tests:
-test.use({ storageState: authFile });
+test.use({ storageState: 'tests/.auth/user.json' });
 ```
 
 ---

@@ -75,6 +75,14 @@ What production-quality code looks like. Use this as a quality bar for writing a
 | **Inappropriate intimacy** | Class A accesses Class B's private data | Encapsulation violation — add methods |
 | **Primitive obsession** | `string` used for userId, email, and slug interchangeably | Value objects |
 
+### Two Hats Rule
+
+Never mix refactoring and optimization in the same session.
+- **Hat 1: Refactoring** — change structure, NOT behavior. Tests must pass unchanged.
+- **Hat 2: Optimization** — improve performance, NOT structure. Benchmarks required.
+
+When switching hats: commit first, then switch context.
+
 ### The Worst Offenders
 
 ```typescript
@@ -101,6 +109,15 @@ function getUserName(id: string): string {
 }
 // FIX: separate concerns or document the side effect
 ```
+
+### Performance Anti-Patterns
+
+| Pattern | Fix |
+|---------|-----|
+| N+1 queries (DB call in a loop) | Batch fetch before loop; use eager loading |
+| Blocking I/O in async handler (`readFileSync`, `execSync`) | Use async equivalents |
+| No pagination (`SELECT *` returning all rows) | Add `LIMIT` / cursor pagination |
+| O(n²) algorithm (nested loops over same data) | HashMap or sort + single pass |
 
 ---
 
@@ -202,6 +219,14 @@ describe('calculateTax', () => {
 | "It's just a quick fix" | Quick fixes compound into legacy debt |
 | "The tests are too hard to write" | The code is too hard to test — simplify it |
 | "It works, don't touch it" | Working ≠ correct; correct ≠ maintainable |
+
+### Automated Quality Gates (by phase)
+
+| Phase | Checks |
+|-------|--------|
+| Pre-commit | Lint + format + type check + secret scan |
+| CI pipeline | Lint + secret scan + vulnerability scan + tests |
+| Continuous | Dependency updates + security advisories |
 
 ## Verification Checklist
 

@@ -26,7 +26,7 @@ Design, optimize, and evaluate prompts for consistent, high-quality LLM output.
 
 ## When NOT to Use
 
-- General code writing (use implementation-best-practices)
+- General code writing (use coding-principles skill)
 - RAG pipeline design (use rag-and-vector-search)
 - LLM cost reduction without quality focus (use llm-cost-optimization)
 

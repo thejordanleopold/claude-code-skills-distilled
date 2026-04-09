@@ -64,6 +64,16 @@ Every feature starts with zero complexity credit. Each abstraction costs from th
 - Helpers used by exactly one call site
 - Comments that describe what the code does (make the code say it)
 
+### Surgical Changes
+
+Touch only what the task requires. When editing existing code:
+- Don't improve adjacent code, comments, or formatting
+- Don't refactor things that aren't broken
+- Match existing style, even if you'd do it differently
+- If you notice unrelated dead code, flag it — don't delete it
+
+Every changed line should trace directly to the user's request.
+
 ---
 
 ## Incremental Delivery
@@ -173,6 +183,19 @@ if (!options.confirm) return;
 | "It's just a small exception" | Exceptions compound into architecture. |
 | "I'll add tests after" | Tests reveal design problems. Write them first. |
 | "It's obvious, no comment needed" | Future you at 2am disagrees. |
+
+### Goal-Driven Execution
+
+Transform vague tasks into verifiable goals before implementing:
+- "Add validation" → "Write tests for invalid inputs, then make them pass"
+- "Fix the bug" → "Write a failing test that reproduces it, then make it pass"
+
+For multi-step tasks, state a brief plan:
+```
+1. [Step] → verify: [how you'll confirm it worked]
+2. [Step] → verify: [how you'll confirm it worked]
+```
+Strong success criteria let you loop independently. Weak ones ("make it work") require constant clarification.
 
 ## Verification Checklist
 

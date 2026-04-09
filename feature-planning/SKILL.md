@@ -54,6 +54,24 @@ If you cannot answer all three, you are not ready to plan.
 
 Write answers down. Q3 and Q4 are non-negotiable.
 
+### Clarification Format for Underspecified Requests
+
+When a request is underspecified, ask the minimum set of questions needed:
+- 1-5 questions maximum in the first pass
+- Numbered questions with lettered options; **bold the recommended choice**
+- Include a fast-path: "Reply `defaults` to accept all recommended choices"
+- After answers, restate chosen options in plain language to confirm
+
+Example:
+```
+1) Scope?  **a) Minimal change** / b) Refactor area / c) Not sure
+2) Compat? **a) Current defaults** / b) Older versions / c) Not sure
+
+Reply: defaults (or 1a 2b)
+```
+
+While waiting for answers: you may do low-risk discovery (read configs, inspect repo structure) but do not edit files or produce a plan that depends on unknowns.
+
 ---
 
 ## Phase 2: Scope Discipline

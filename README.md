@@ -1,6 +1,6 @@
 # Claude Code Skills Distilled
 
-30 production-quality skills for [Claude Code](https://claude.ai/code), synthesized from 16 community skill repositories into focused, high-signal reference files.
+31 production-quality skills for [Claude Code](https://claude.ai/code), synthesized from 16 community skill repositories into focused, high-signal reference files.
 
 ## What Are Skills?
 
@@ -8,7 +8,7 @@ Claude Code skills are context files that load automatically when relevant tasks
 
 Install by placing skill directories in `~/.claude/skills/`. Claude Code picks them up automatically.
 
-## Skills (30 total)
+## Skills (31 total)
 
 ### Planning & Architecture
 | Skill | Triggers |
@@ -41,6 +41,7 @@ Install by placing skill directories in `~/.claude/skills/`. Claude Code picks t
 | `threat-modeling` | STRIDE, attack surface, trust boundaries, DREAD scoring |
 | `security-review` | OWASP Top 10, static analysis, vulnerability review, Semgrep |
 | `security-hardening` | Security headers, rate limiting, secrets management, dependency audit |
+| `offensive-security` | Pentest, CTF, red team, privilege escalation, active directory, OSCP |
 
 ### Performance
 | Skill | Triggers |

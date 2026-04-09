@@ -70,6 +70,18 @@ codeql database analyze codeql.db \
 
 ---
 
+## ASVS 5.0 Verification Levels
+
+| Level | Scope | Applies To |
+|-------|-------|-----------|
+| L1 | Basic security controls (auditable externally) | All applications |
+| L2 | Defense-in-depth, security by design | Apps with sensitive data, B2B, regulated industries |
+| L3 | Advanced controls, formal verification | Critical infrastructure, healthcare, finance, IoT |
+
+Start every audit at L1. Escalate to L2/L3 based on data sensitivity and threat model. L3 requires formal cryptographic review.
+
+---
+
 ## Phase 2: OWASP Top 10:2025
 
 | # | Vulnerability | Quick Check |

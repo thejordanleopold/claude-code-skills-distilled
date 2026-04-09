@@ -25,7 +25,7 @@ Production-quality relational database design: schema, migrations, indexing, sec
 
 ## When NOT to Use
 
-- Writing application-level SQL queries (use sql-assistant)
+- Writing application-level SQL queries (use coding-principles skill)
 - ORM configuration only
 - NoSQL database design (different skill domain)
 
