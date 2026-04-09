@@ -20,95 +20,18 @@ cp -r claude-code-skills-distilled/debugging ~/.claude/skills/
 
 ## Skills (31 total)
 
-### Planning & Architecture
-| Skill | Triggers |
-|-------|---------|
-| `feature-planning` | Planning features, clarifying requirements, vertical slicing |
-| `system-design` | Architecture design, ADRs, DDD, bounded contexts |
-
-### Implementation
-| Skill | Triggers |
-|-------|---------|
-| `coding-principles` | Implementation approach, complexity, dependencies, 12-factor |
-| `api-design` | REST APIs, contract-first design, circuit breaker, Hyrum's Law |
-| `refactoring` | Safe restructuring, Extract Method, Strangler Fig, code smells |
-
-### Code Quality
-| Skill | Triggers |
-|-------|---------|
-| `code-review` | Code review, PR feedback, 6-axis review framework |
-| `code-standards` | Naming, complexity thresholds, anti-patterns, best practices |
-
-### Testing
-| Skill | Triggers |
-|-------|---------|
-| `tdd` | TDD, unit tests, RED-GREEN-REFACTOR, mocks vs fakes |
-| `e2e-testing` | Playwright, integration tests, browser automation, property-based testing |
-
-### Security
-| Skill | Triggers |
-|-------|---------|
-| `threat-modeling` | STRIDE, attack surface, trust boundaries, DREAD scoring |
-| `security-review` | OWASP Top 10, static analysis, vulnerability review, Semgrep |
-| `security-hardening` | Security headers, rate limiting, secrets management, dependency audit |
-| `offensive-security` | Pentest, CTF, red team, privilege escalation, active directory, OSCP |
-
-### Performance
-| Skill | Triggers |
-|-------|---------|
-| `frontend-performance` | Core Web Vitals, LCP/INP/CLS, bundle size, React re-renders |
-| `backend-performance` | Slow APIs, N+1 queries, EXPLAIN plans, memory leaks |
-
-### Design & UI
-| Skill | Triggers |
-|-------|---------|
-| `design-system` | Design tokens, color palette, typography, DESIGN.md |
-| `ui-components` | WCAG 2.1 AA, responsive design, component architecture |
-
-### Shipping
-| Skill | Triggers |
-|-------|---------|
-| `git-workflow` | Commits, branches, PRs, trunk-based development, worktrees |
-| `deployment` | CI/CD, GitHub Actions, feature flags, canary releases, incidents |
-
-### AI / LLM
-| Skill | Triggers |
-|-------|---------|
-| `prompt-engineering` | Prompt optimization, few-shot design, structured output |
-| `rag-and-vector-search` | RAG pipelines, embeddings, vector databases, chunking |
-| `llm-cost-optimization` | Token optimization, model routing, prompt caching, cost governance |
-
-### Data & Operations
-| Skill | Triggers |
-|-------|---------|
-| `database-design` | Schema design, migrations, indexes, multi-tenancy, RLS |
-| `observability` | OpenTelemetry, logging, metrics, tracing, alerting, dashboards |
-| `compliance-and-governance` | SOC 2, ISO 27001, GDPR, gap analysis, evidence automation |
-| `data-engineering` | ETL/ELT, data quality, dimensional modeling, analytics events |
-| `workflow-automation` | Multi-step automation, Temporal, human-in-the-loop, Playwright |
-| `third-party-integration` | External APIs, webhooks, Stripe, adapter pattern, idempotency |
-
-### Meta
-| Skill | Triggers |
-|-------|---------|
-| `debugging` | Bugs, failing tests, errors, production incidents |
-| `multi-agent-orchestration` | Parallel agent dispatch, subagent coordination |
-| `skill-creation` | Creating or editing Claude Code skills |
-
-## Slash Commands
-
-Every skill is also a slash command. Type `/skill-name` to invoke it directly, or let Claude auto-load it when your prompt matches its triggers.
+Every skill is also a slash command — type `/skill-name` to invoke directly, or let Claude auto-load it when your prompt matches its triggers.
 
 ### Planning & Architecture
 
-| Command | Description | When to use |
+| Skill | Description | When to use |
 |---------|-------------|-------------|
 | `/feature-planning` | Clarifies requirements, slices vertically, asks 1–5 forcing questions before writing a line of code | Starting a feature with unclear or underspecified scope |
 | `/system-design` | Produces ADRs, bounded contexts, trust boundaries, and explicit trade-off analysis | Designing a new system, service, or major architectural component |
 
 ### Implementation
 
-| Command | Description | When to use |
+| Skill | Description | When to use |
 |---------|-------------|-------------|
 | `/coding-principles` | Applies surgical changes, goal-driven execution, simplicity-first, and 12-factor discipline | Deciding how to approach an implementation or reviewing complexity decisions |
 | `/api-design` | Contract-first REST design with Hyrum's Law, circuit breakers, idempotency, and health checks | Designing or reviewing API endpoints |
@@ -116,21 +39,21 @@ Every skill is also a slash command. Type `/skill-name` to invoke it directly, o
 
 ### Code Quality
 
-| Command | Description | When to use |
+| Skill | Description | When to use |
 |---------|-------------|-------------|
 | `/code-review` | 6-axis review (correctness, security, performance, readability, maintainability, architecture), tests first | Reviewing a PR or requesting a structured code audit |
 | `/code-standards` | Naming conventions, complexity thresholds, Two Hats Rule, and automated quality gates | Checking whether code meets team or project standards |
 
 ### Testing
 
-| Command | Description | When to use |
+| Skill | Description | When to use |
 |---------|-------------|-------------|
 | `/tdd` | RED-GREEN-REFACTOR cycle, Prove-It Pattern for bugs, Mock at Boundaries Only, `[unit] should [behavior] when [condition]` naming | Writing tests or fixing any bug |
 | `/e2e-testing` | Playwright with Page Object Model, `page.route()` API mocking, `axe-playwright` accessibility testing | Testing complete user flows or automating browser interactions |
 
 ### Security
 
-| Command | Description | When to use |
+| Skill | Description | When to use |
 |---------|-------------|-------------|
 | `/threat-modeling` | STRIDE analysis, DREAD scoring, trust boundary mapping, agentic AI threat vectors | Before writing any auth, authorization, or data handling code |
 | `/security-review` | OWASP Top 10:2025, ASVS 5.0 levels, Semgrep/CodeQL, variant analysis, constant-time crypto | Auditing code for specific vulnerability classes |
@@ -139,28 +62,28 @@ Every skill is also a slash command. Type `/skill-name` to invoke it directly, o
 
 ### Performance
 
-| Command | Description | When to use |
+| Skill | Description | When to use |
 |---------|-------------|-------------|
 | `/frontend-performance` | Core Web Vitals (LCP/INP/CLS), bundle analysis, React re-render diagnosis, Lighthouse CI | Web vitals are failing or the frontend feels slow |
 | `/backend-performance` | N+1 detection, EXPLAIN plans, index strategy, memory leaks, API latency budgets | APIs are slow or database queries are underperforming |
 
 ### Design & UI
 
-| Command | Description | When to use |
+| Skill | Description | When to use |
 |---------|-------------|-------------|
 | `/design-system` | Design tokens (primitive → semantic → component), color constraints, typography, spacing, DESIGN.md | Establishing the visual design language for a product |
 | `/ui-components` | WCAG 2.1 AA accessibility, focus management, responsive design, AI slop anti-patterns | Building or reviewing UI components |
 
 ### Shipping
 
-| Command | Description | When to use |
+| Skill | Description | When to use |
 |---------|-------------|-------------|
 | `/git-workflow` | Atomic commits, trunk-based development, prefix-grouped branch cleanup, two-gate confirmation for destructive ops | Committing, branching, or cleaning up stale branches |
 | `/deployment` | CI/CD quality gates, GitHub Actions, canary releases, feature flag lifecycle, incident management | Setting up or improving a deployment pipeline |
 
 ### AI / LLM
 
-| Command | Description | When to use |
+| Skill | Description | When to use |
 |---------|-------------|-------------|
 | `/prompt-engineering` | Few-shot design, chain-of-thought, structured output, system prompt architecture, A/B testing prompts | Designing or improving a prompt for an LLM |
 | `/rag-and-vector-search` | Chunking strategy, embedding model selection, vector DB setup, RAGAS evaluation | Building a RAG pipeline or semantic search system |
@@ -168,7 +91,7 @@ Every skill is also a slash command. Type `/skill-name` to invoke it directly, o
 
 ### Data & Operations
 
-| Command | Description | When to use |
+| Skill | Description | When to use |
 |---------|-------------|-------------|
 | `/database-design` | Schema normalization, zero-downtime migrations, RLS, multi-tenancy, index strategy | Designing or reviewing a relational database schema |
 | `/observability` | OpenTelemetry, RED/USE metrics, structured logs, distributed tracing, alert runbooks | Adding monitoring to a service or debugging a production incident blind |
@@ -179,7 +102,7 @@ Every skill is also a slash command. Type `/skill-name` to invoke it directly, o
 
 ### Meta
 
-| Command | Description | When to use |
+| Skill | Description | When to use |
 |---------|-------------|-------------|
 | `/debugging` | 4-phase root cause investigation, Stop-the-Line rule, structured debug report. No fixes before diagnosis | Before proposing any fix for a bug, error, crash, or unexpected behavior |
 | `/multi-agent-orchestration` | Parallel dispatch, swarm pattern, file ownership, conflict prevention, subagent prompt structure | Decomposing a task across multiple agents working concurrently |
