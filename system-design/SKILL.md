@@ -1,12 +1,6 @@
 ---
 name: system-design
-description: |
-  Use when designing system architecture, making architectural decisions, writing Architecture
-  Decision Records (ADRs), applying Domain-Driven Design (DDD) patterns, decomposing a system
-  into bounded contexts or services, designing component boundaries and interfaces, evaluating
-  architectural trade-offs, or planning a major technical direction change. Triggers: "design
-  the architecture", "system design", "ADR", "bounded context", "how should I structure the system",
-  "microservices vs monolith", "event-driven", "trade-offs".
+description: "Use when designing system architecture, making architectural decisions, writing Architecture Decision Records (ADRs), applying Domain-Driven Design (DDD) patterns, decomposing a system into bounded contexts or services, designing component boundaries and interfaces, evaluating architectural trade-offs, or planning a major technical direction change. Triggers: \"design the architecture\", \"system design\", \"ADR\", \"bounded context\", \"how should I structure the system\", \"microservices vs monolith\", \"event-driven\", \"trade-offs\"."
 ---
 
 # System Design

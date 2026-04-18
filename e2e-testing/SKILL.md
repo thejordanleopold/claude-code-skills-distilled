@@ -1,11 +1,6 @@
 ---
 name: e2e-testing
-description: |
-  Use when writing end-to-end tests, browser automation with Playwright, integration tests
-  hitting real databases, API integration testing, testing complete user flows, managing test
-  data lifecycle, or applying property-based testing. Triggers: "e2e test", "end-to-end",
-  "Playwright", "browser test", "integration test", "user flow test", "API test", "test data",
-  "Cypress", "property-based testing", "fuzz testing".
+description: "Use when writing end-to-end tests, browser automation with Playwright, integration tests hitting real databases, API integration testing, testing complete user flows, managing test data lifecycle, or applying property-based testing. Triggers: \"e2e test\", \"end-to-end\", \"Playwright\", \"browser test\", \"integration test\", \"user flow test\", \"API test\", \"test data\", \"Cypress\", \"property-based testing\", \"fuzz testing\"."
 ---
 
 # E2E and Integration Testing

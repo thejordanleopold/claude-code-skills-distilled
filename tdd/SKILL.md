@@ -1,11 +1,6 @@
 ---
 name: tdd
-description: |
-  Use when writing unit tests, practicing test-driven development, fixing bugs with the
-  Prove-It Pattern, applying RED-GREEN-REFACTOR discipline, choosing between mocks and stubs,
-  designing the test pyramid, running mutation testing, or verifying test coverage. Triggers:
-  "write tests", "TDD", "unit test", "test this function", "RED-GREEN-REFACTOR", "failing test",
-  "mock vs stub", "test coverage", "test pyramid", "mutation testing".
+description: "Use when writing unit tests, practicing test-driven development, fixing bugs with the Prove-It Pattern, applying RED-GREEN-REFACTOR discipline, choosing between mocks and stubs, designing the test pyramid, running mutation testing, or verifying test coverage. Triggers: \"write tests\", \"TDD\", \"unit test\", \"test this function\", \"RED-GREEN-REFACTOR\", \"failing test\", \"mock vs stub\", \"test coverage\", \"test pyramid\", \"mutation testing\"."
 ---
 
 # TDD — Test-Driven Development

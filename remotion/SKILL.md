@@ -1,12 +1,6 @@
 ---
 name: remotion
-description: |
-  Use when creating programmatic videos using React and Remotion — composing video from
-  React components, animating with useCurrentFrame and interpolate, adding transitions,
-  handling audio, rendering to MP4, or integrating video assets. Triggers: "Remotion",
-  "programmatic video", "video in React", "React to MP4", "video composition", "video
-  animation", "render video", "Remotion composition", "frame-based animation",
-  "useCurrentFrame", "interpolate Remotion", "TransitionSeries", "video rendering".
+description: "Use when creating programmatic videos using React and Remotion — composing video from React components, animating with useCurrentFrame and interpolate, adding transitions, handling audio, rendering to MP4, or integrating video assets. Triggers: \"Remotion\", \"programmatic video\", \"video in React\", \"React to MP4\", \"video composition\", \"video animation\", \"render video\", \"Remotion composition\", \"frame-based animation\", \"useCurrentFrame\", \"interpolate Remotion\", \"TransitionSeries\", \"video rendering\"."
 ---
 
 # Remotion — Programmatic Video in React

@@ -1,15 +1,6 @@
 ---
 name: prompt-injection-tester
-description: |
-  Use when testing a system prompt against adversarial attack probes, measuring prompt
-  robustness with a 0-100 trust score, or identifying which prompt injection or extraction
-  techniques succeed against a given AI configuration. Use when red-teaming an AI assistant's
-  system prompt, validating injection defenses before production deployment, or reproducing a
-  reported prompt injection. Triggers: "test system prompt", "prompt robustness", "jailbreak
-  test", "trust score", "prompt red team", "extraction probe", "injection probe", "DAN test",
-  "EchoLeak", "skeleton key", "system prompt leakage", "prompt injection test", "adversarial
-  probe", "BiDi injection", "many-shot priming", "canary test", "AgentSeal scan", "instruction
-  override test", "delimiter attack", "prompt security test".
+description: "Use when testing a system prompt against adversarial attack probes, measuring prompt robustness with a 0-100 trust score, or identifying which prompt injection or extraction techniques succeed against a given AI configuration. Use when red-teaming an AI assistant's system prompt, validating injection defenses before production deployment, or reproducing a reported prompt injection. Triggers: \"test system prompt\", \"prompt robustness\", \"jailbreak test\", \"trust score\", \"prompt red team\", \"extraction probe\", \"injection probe\", \"DAN test\", \"EchoLeak\", \"skeleton key\", \"system prompt leakage\", \"prompt injection test\", \"adversarial probe\", \"BiDi injection\", \"many-shot priming\", \"canary test\", \"AgentSeal scan\", \"instruction override test\", \"delimiter attack\", \"prompt security test\"."
 allowed-tools:
   - Read
   - Bash

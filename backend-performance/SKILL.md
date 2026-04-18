@@ -1,11 +1,6 @@
 ---
 name: backend-performance
-description: |
-  Use when diagnosing slow API responses, fixing N+1 query problems, optimizing database
-  queries, adding indexes, debugging memory leaks, profiling server-side code, setting API
-  latency budgets, or detecting performance regressions. Triggers: "slow API", "slow query",
-  "N+1", "database performance", "N+1 queries", "memory leak", "backend performance",
-  "profiling", "API latency", "EXPLAIN plan", "missing index", "unbounded fetch".
+description: "Use when diagnosing slow API responses, fixing N+1 query problems, optimizing database queries, adding indexes, debugging memory leaks, profiling server-side code, setting API latency budgets, or detecting performance regressions. Triggers: \"slow API\", \"slow query\", \"N+1\", \"database performance\", \"N+1 queries\", \"memory leak\", \"backend performance\", \"profiling\", \"API latency\", \"EXPLAIN plan\", \"missing index\", \"unbounded fetch\"."
 ---
 
 # Backend Performance

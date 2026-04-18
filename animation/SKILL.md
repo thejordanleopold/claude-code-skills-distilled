@@ -1,11 +1,6 @@
 ---
 name: animation
-description: |
-  Use when implementing animations, transitions, hover effects, page transitions, exit
-  animations, scroll-linked animations, drag interactions, or motion design in React/Next.js.
-  Triggers: "animation", "animate", "framer motion", "motion", "transition", "hover effect",
-  "page transition", "AnimatePresence", "spring physics", "micro-interaction", "scroll
-  animation", "exit animation", "layout animation", "shared element transition", "gesture".
+description: "Use when implementing animations, transitions, hover effects, page transitions, exit animations, scroll-linked animations, drag interactions, or motion design in React/Next.js. Triggers: \"animation\", \"animate\", \"framer motion\", \"motion\", \"transition\", \"hover effect\", \"page transition\", \"AnimatePresence\", \"spring physics\", \"micro-interaction\", \"scroll animation\", \"exit animation\", \"layout animation\", \"shared element transition\", \"gesture\"."
 ---
 
 # Animation

@@ -1,11 +1,6 @@
 ---
 name: code-standards
-description: |
-  Use when evaluating whether code meets quality standards, checking naming conventions,
-  assessing complexity thresholds, identifying anti-patterns, understanding what good code
-  looks like, or applying quality standards to your own code before submitting. Triggers:
-  "is this code good", "code quality", "does this follow best practices", "naming conventions",
-  "is this too complex", "code standards", "what makes good code", "anti-patterns".
+description: "Use when evaluating whether code meets quality standards, checking naming conventions, assessing complexity thresholds, identifying anti-patterns, understanding what good code looks like, or applying quality standards to your own code before submitting. Triggers: \"is this code good\", \"code quality\", \"does this follow best practices\", \"naming conventions\", \"is this too complex\", \"code standards\", \"what makes good code\", \"anti-patterns\"."
 ---
 
 # Code Standards

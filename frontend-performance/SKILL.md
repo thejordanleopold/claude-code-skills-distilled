@@ -1,11 +1,6 @@
 ---
 name: frontend-performance
-description: |
-  Use when optimizing frontend performance, improving Core Web Vitals (LCP, INP, CLS),
-  reducing JavaScript bundle size, fixing slow page loads, debugging React re-renders,
-  implementing performance budgets, or setting up Lighthouse CI. Triggers: "slow page",
-  "LCP", "INP", "CLS", "Core Web Vitals", "bundle size", "frontend performance", "re-renders",
-  "Lighthouse", "page load", "large bundle", "layout shift", "interaction delay".
+description: "Use when optimizing frontend performance, improving Core Web Vitals (LCP, INP, CLS), reducing JavaScript bundle size, fixing slow page loads, debugging React re-renders, implementing performance budgets, or setting up Lighthouse CI. Triggers: \"slow page\", \"LCP\", \"INP\", \"CLS\", \"Core Web Vitals\", \"bundle size\", \"frontend performance\", \"re-renders\", \"Lighthouse\", \"page load\", \"large bundle\", \"layout shift\", \"interaction delay\"."
 ---
 
 # Frontend Performance

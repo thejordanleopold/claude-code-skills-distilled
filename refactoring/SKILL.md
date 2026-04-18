@@ -1,11 +1,6 @@
 ---
 name: refactoring
-description: |
-  Use when improving code structure, readability, or testability without changing behavior.
-  Apply when functions are too long, code is duplicated across files, names don't match intent,
-  dependencies are tangled, tests are hard to write, or preparing for a large rewrite using
-  the strangler fig pattern. Triggers: code smells (long method, feature envy, data clumps,
-  primitive obsession), "hard to understand", "hard to change", "hard to test", "clean this up".
+description: "Use when improving code structure, readability, or testability without changing behavior. Apply when functions are too long, code is duplicated across files, names don't match intent, dependencies are tangled, tests are hard to write, or preparing for a large rewrite using the strangler fig pattern. Triggers: code smells (long method, feature envy, data clumps, primitive obsession), \"hard to understand\", \"hard to change\", \"hard to test\", \"clean this up\"."
 ---
 
 # Refactoring

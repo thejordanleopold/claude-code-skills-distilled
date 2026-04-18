@@ -1,11 +1,6 @@
 ---
 name: api-design
-description: |
-  Use when designing APIs, defining interfaces, choosing between REST and alternatives, applying
-  Hyrum's Law, designing resilience patterns (circuit breaker, retry with backoff, health checks),
-  writing API contracts, or reviewing API design for consistency and correctness. Triggers:
-  "design an API", "API design", "REST API", "interface design", "HTTP endpoints", "contract-first",
-  "Hyrum's Law", "circuit breaker", "retry logic", "health check endpoint".
+description: "Use when designing APIs, defining interfaces, choosing between REST and alternatives, applying Hyrum's Law, designing resilience patterns (circuit breaker, retry with backoff, health checks), writing API contracts, or reviewing API design for consistency and correctness. Triggers: \"design an API\", \"API design\", \"REST API\", \"interface design\", \"HTTP endpoints\", \"contract-first\", \"Hyrum's Law\", \"circuit breaker\", \"retry logic\", \"health check endpoint\"."
 ---
 
 # API Design

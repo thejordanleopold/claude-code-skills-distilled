@@ -1,12 +1,6 @@
 ---
 name: document-processing
-description: |
-  Use when reading, creating, editing, merging, splitting, or extracting content from PDF
-  files or Excel/spreadsheet files. Use when processing tabular data, building financial
-  models in Excel, extracting text from scanned documents, or converting between document
-  formats. Triggers: "PDF", "Excel", "spreadsheet", "xlsx", "pypdf", "pdfplumber",
-  "reportlab", "openpyxl", "pandas", "document processing", "extract text from PDF",
-  "merge PDF", "split PDF", "financial model", "OCR", "spreadsheet automation".
+description: "Use when reading, creating, editing, merging, splitting, or extracting content from PDF files or Excel/spreadsheet files. Use when processing tabular data, building financial models in Excel, extracting text from scanned documents, or converting between document formats. Triggers: \"PDF\", \"Excel\", \"spreadsheet\", \"xlsx\", \"pypdf\", \"pdfplumber\", \"reportlab\", \"openpyxl\", \"pandas\", \"document processing\", \"extract text from PDF\", \"merge PDF\", \"split PDF\", \"financial model\", \"OCR\", \"spreadsheet automation\"."
 ---
 
 # Document Processing

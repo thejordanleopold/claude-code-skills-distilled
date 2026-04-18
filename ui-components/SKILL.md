@@ -1,11 +1,6 @@
 ---
 name: ui-components
-description: |
-  Use when building UI components, implementing accessible interfaces, creating responsive
-  layouts, auditing UI for visual quality or AI aesthetic anti-patterns, implementing component
-  variants, reviewing component architecture, or ensuring WCAG 2.1 AA compliance. Triggers:
-  "build a component", "UI component", "accessible", "responsive", "modal", "form", "button",
-  "layout", "ARIA", "keyboard navigation", "screen reader", "visual QA", "component library".
+description: "Use when building UI components, implementing accessible interfaces, creating responsive layouts, auditing UI for visual quality or AI aesthetic anti-patterns, implementing component variants, reviewing component architecture, or ensuring WCAG 2.1 AA compliance. Triggers: \"build a component\", \"UI component\", \"accessible\", \"responsive\", \"modal\", \"form\", \"button\", \"layout\", \"ARIA\", \"keyboard navigation\", \"screen reader\", \"visual QA\", \"component library\"."
 ---
 
 # UI Components

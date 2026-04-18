@@ -1,10 +1,6 @@
 ---
 name: feature-planning
-description: |
-  Use when starting a new feature, clarifying requirements before writing code, deciding scope,
-  creating a vertical slice delivery plan, or determining what not to build. Triggers:
-  "plan this feature", "how should I approach", "what should we build", "clarify requirements",
-  "break this down", "scope this", "what's the MVP", "where do I start", "think before coding".
+description: "Use when starting a new feature, clarifying requirements before writing code, deciding scope, creating a vertical slice delivery plan, or determining what not to build. Triggers: \"plan this feature\", \"how should I approach\", \"what should we build\", \"clarify requirements\", \"break this down\", \"scope this\", \"what's the MVP\", \"where do I start\", \"think before coding\"."
 ---
 
 # Feature Planning

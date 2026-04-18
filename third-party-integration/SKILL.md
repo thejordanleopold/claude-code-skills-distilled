@@ -1,12 +1,6 @@
 ---
 name: third-party-integration
-description: |
-  Use when integrating with external APIs, payment processors (Stripe), webhooks, or
-  third-party services. Use when implementing API clients with authentication and rate limiting,
-  handling webhooks with signature verification and idempotency, writing contract tests for
-  external services, or isolating third-party dependencies behind adapters. Triggers:
-  "Stripe", "payment integration", "webhook", "third-party API", "external service",
-  "API client", "integrate with", "signature verification", "idempotency key".
+description: "Use when integrating with external APIs, payment processors (Stripe), webhooks, or third-party services. Use when implementing API clients with authentication and rate limiting, handling webhooks with signature verification and idempotency, writing contract tests for external services, or isolating third-party dependencies behind adapters. Triggers: \"Stripe\", \"payment integration\", \"webhook\", \"third-party API\", \"external service\", \"API client\", \"integrate with\", \"signature verification\", \"idempotency key\"."
 ---
 
 # Third-Party Integration

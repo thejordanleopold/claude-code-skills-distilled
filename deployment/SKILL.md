@@ -1,11 +1,6 @@
 ---
 name: deployment
-description: |
-  Use when configuring CI/CD pipelines, deploying to production, implementing feature flags,
-  monitoring canary releases, setting up GitHub Actions, managing rollbacks, configuring
-  observability for deployments, or responding to production incidents. Triggers: "deploy",
-  "CI/CD", "pipeline", "release", "feature flag", "canary", "rollback", "GitHub Actions",
-  "ship", "production", "incident", "monitoring deployment", "deployment strategy".
+description: "Use when configuring CI/CD pipelines, deploying to production, implementing feature flags, monitoring canary releases, setting up GitHub Actions, managing rollbacks, configuring observability for deployments, or responding to production incidents. Triggers: \"deploy\", \"CI/CD\", \"pipeline\", \"release\", \"feature flag\", \"canary\", \"rollback\", \"GitHub Actions\", \"ship\", \"production\", \"incident\", \"monitoring deployment\", \"deployment strategy\"."
 ---
 
 # Deployment

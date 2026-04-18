@@ -1,10 +1,6 @@
 ---
 name: code-review
-description: |
-  Use when reviewing code, giving feedback on a PR, auditing a codebase for quality problems,
-  or evaluating code before submitting. Triggers: "review this", "code review", "review this PR",
-  "give me feedback on this code", "audit this code", "what's wrong with this",
-  "is this implementation good", "critique this", "check this for issues".
+description: "Use when reviewing code, giving feedback on a PR, auditing a codebase for quality problems, or evaluating code before submitting. Triggers: \"review this\", \"code review\", \"review this PR\", \"give me feedback on this code\", \"audit this code\", \"what's wrong with this\", \"is this implementation good\", \"critique this\", \"check this for issues\"."
 ---
 
 # Code Review

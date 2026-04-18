@@ -1,10 +1,6 @@
 ---
 name: debugging
-description: |
-  Use when encountering any bug, test failure, build error, unexpected behavior, or production
-  incident. Use before proposing any fix — diagnosis must precede solution. Triggers: "bug",
-  "broken", "failing test", "unexpected behavior", "error", "not working", "production incident",
-  "why is this happening", "help me debug", "exception", "crash", "race condition", "flaky test".
+description: "Use when encountering any bug, test failure, build error, unexpected behavior, or production incident. Use before proposing any fix — diagnosis must precede solution. Triggers: \"bug\", \"broken\", \"failing test\", \"unexpected behavior\", \"error\", \"not working\", \"production incident\", \"why is this happening\", \"help me debug\", \"exception\", \"crash\", \"race condition\", \"flaky test\"."
 ---
 
 # Systematic Debugging and Error Recovery

@@ -1,11 +1,6 @@
 ---
 name: rag-and-vector-search
-description: |
-  Use when building retrieval-augmented generation (RAG) pipelines, implementing vector search,
-  choosing embedding models or vector databases, optimizing retrieval strategies, evaluating RAG
-  quality (faithfulness, relevance, groundedness), or debugging RAG failures like hallucination,
-  retrieval miss, or context overflow. Use for document chunking, hybrid search, reranking,
-  context window optimization, and RAG evaluation with RAGAS or similar frameworks.
+description: "Use when building retrieval-augmented generation (RAG) pipelines, implementing vector search, choosing embedding models or vector databases, optimizing retrieval strategies, evaluating RAG quality (faithfulness, relevance, groundedness), or debugging RAG failures like hallucination, retrieval miss, or context overflow. Use for document chunking, hybrid search, reranking, context window optimization, and RAG evaluation with RAGAS or similar frameworks."
 ---
 
 # RAG and Vector Search

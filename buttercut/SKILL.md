@@ -1,12 +1,6 @@
 ---
 name: buttercut
-description: |
-  Use when transcribing video audio, generating visual descriptions from video frames,
-  or creating rough cut edit sequences from video footage. A three-phase AI-assisted video
-  editing workflow: transcribe audio with WhisperX, analyze frames with FFmpeg, create
-  rough cut YAML for Buttercut. Triggers: "Buttercut", "rough cut", "video rough cut",
-  "video transcription", "WhisperX", "video analysis", "visual transcript", "video
-  sequence", "video scene", "Final Cut Pro XML", "video editing workflow", "video footage".
+description: "Use when transcribing video audio, generating visual descriptions from video frames, or creating rough cut edit sequences from video footage. A three-phase AI-assisted video editing workflow: transcribe audio with WhisperX, analyze frames with FFmpeg, create rough cut YAML for Buttercut. Triggers: \"Buttercut\", \"rough cut\", \"video rough cut\", \"video transcription\", \"WhisperX\", \"video analysis\", \"visual transcript\", \"video sequence\", \"video scene\", \"Final Cut Pro XML\", \"video editing workflow\", \"video footage\"."
 ---
 
 # Skill: Buttercut Video Editing Workflow

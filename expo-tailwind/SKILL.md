@@ -1,12 +1,6 @@
 ---
 name: expo-tailwind
-description: |
-  Use when setting up or using Tailwind CSS in Expo or React Native projects with NativeWind
-  v5 and react-native-css for universal styling across iOS, Android, and web. Covers Metro
-  config setup, PostCSS configuration, CSS component wrappers, platform-specific styles,
-  Apple system colors, and dark mode. Triggers: "NativeWind", "Tailwind Expo", "Tailwind
-  React Native", "react-native-css", "Tailwind mobile", "Expo Tailwind setup", "NativeWind
-  v5", "Tailwind v4 Expo", "universal styling", "Tailwind iOS", "Tailwind Android".
+description: "Use when setting up or using Tailwind CSS in Expo or React Native projects with NativeWind v5 and react-native-css for universal styling across iOS, Android, and web. Covers Metro config setup, PostCSS configuration, CSS component wrappers, platform-specific styles, Apple system colors, and dark mode. Triggers: \"NativeWind\", \"Tailwind Expo\", \"Tailwind React Native\", \"react-native-css\", \"Tailwind mobile\", \"Expo Tailwind setup\", \"NativeWind v5\", \"Tailwind v4 Expo\", \"universal styling\", \"Tailwind iOS\", \"Tailwind Android\"."
 ---
 
 # Expo + Tailwind CSS (NativeWind v5)

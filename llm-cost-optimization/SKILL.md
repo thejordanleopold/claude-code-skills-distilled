@@ -1,11 +1,6 @@
 ---
 name: llm-cost-optimization
-description: |
-  Use when needing to reduce LLM API spend, audit token usage, route tasks to cheaper models,
-  implement prompt caching, batch LLM requests, track cost per feature or user, or design cost
-  governance for AI products. Triggers: "LLM costs", "token usage", "reduce AI spend",
-  "model routing", "prompt caching", "cost per request", "LLM bill", "cheaper model",
-  "batch API calls", "cost optimization", "AI budget".
+description: "Use when needing to reduce LLM API spend, audit token usage, route tasks to cheaper models, implement prompt caching, batch LLM requests, track cost per feature or user, or design cost governance for AI products. Triggers: \"LLM costs\", \"token usage\", \"reduce AI spend\", \"model routing\", \"prompt caching\", \"cost per request\", \"LLM bill\", \"cheaper model\", \"batch API calls\", \"cost optimization\", \"AI budget\"."
 ---
 
 # LLM Cost Optimization

@@ -1,10 +1,6 @@
 ---
 name: git-workflow
-description: |
-  Use when committing code, creating or managing branches, using git worktrees for parallel
-  work, cleaning up merged branches, finishing a development branch, or applying trunk-based
-  development discipline. Triggers: "commit", "branch", "git", "merge", "PR", "pull request",
-  "worktree", "git cleanup", "stale branches", "squash merge", "how to commit", "commit message".
+description: "Use when committing code, creating or managing branches, using git worktrees for parallel work, cleaning up merged branches, finishing a development branch, or applying trunk-based development discipline. Triggers: \"commit\", \"branch\", \"git\", \"merge\", \"PR\", \"pull request\", \"worktree\", \"git cleanup\", \"stale branches\", \"squash merge\", \"how to commit\", \"commit message\"."
 ---
 
 # Git Workflow

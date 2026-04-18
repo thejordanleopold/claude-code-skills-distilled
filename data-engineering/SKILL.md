@@ -1,12 +1,6 @@
 ---
 name: data-engineering
-description: |
-  Use when designing or building data pipelines, ETL/ELT workflows, or data infrastructure.
-  Use when implementing data quality checks, schema validation, or deduplication. Use when
-  modeling data for analytics (fact/dimension tables, star schema), setting up orchestration
-  with Airflow or dbt, troubleshooting pipeline failures, or instrumenting analytics events.
-  Triggers: "data pipeline", "ETL", "ELT", "batch job", "streaming", "data quality",
-  "dbt", "Airflow", "data model", "star schema", "analytics events", "event tracking".
+description: "Use when designing or building data pipelines, ETL/ELT workflows, or data infrastructure. Use when implementing data quality checks, schema validation, or deduplication. Use when modeling data for analytics (fact/dimension tables, star schema), setting up orchestration with Airflow or dbt, troubleshooting pipeline failures, or instrumenting analytics events. Triggers: \"data pipeline\", \"ETL\", \"ELT\", \"batch job\", \"streaming\", \"data quality\", \"dbt\", \"Airflow\", \"data model\", \"star schema\", \"analytics events\", \"event tracking\"."
 ---
 
 # Data Engineering

@@ -1,14 +1,6 @@
 ---
 name: agent-incident-response
-description: |
-  Use when an AI agent has been compromised, behaved unexpectedly, executed unauthorized
-  actions, or may have had credentials exposed. Use when CLAUDE.md was modified without
-  authorization, a skill executed a malicious payload, an agent accessed files outside its
-  scope, or suspicious tool calls were detected. Triggers: "agent compromised", "agent
-  behaved unexpectedly", "suspicious agent behavior", "CLAUDE.md modified", "skill executed
-  payload", "agent accessed credentials", "unauthorized tool calls", "agent incident",
-  "agent compromise response", "agent forensics", "credential exposed by agent",
-  "agent wrote unexpected files", "memory poisoned", "hook fired", "agent anomaly".
+description: "Use when an AI agent has been compromised, behaved unexpectedly, executed unauthorized actions, or may have had credentials exposed. Use when CLAUDE.md was modified without authorization, a skill executed a malicious payload, an agent accessed files outside its scope, or suspicious tool calls were detected. Triggers: \"agent compromised\", \"agent behaved unexpectedly\", \"suspicious agent behavior\", \"CLAUDE.md modified\", \"skill executed payload\", \"agent accessed credentials\", \"unauthorized tool calls\", \"agent incident\", \"agent compromise response\", \"agent forensics\", \"credential exposed by agent\", \"agent wrote unexpected files\", \"memory poisoned\", \"hook fired\", \"agent anomaly\"."
 allowed-tools:
   - Read
   - Glob

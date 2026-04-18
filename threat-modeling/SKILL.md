@@ -1,12 +1,6 @@
 ---
 name: threat-modeling
-description: |
-  Use when performing threat modeling, identifying attack surfaces, mapping trust boundaries,
-  applying STRIDE analysis, scoring threats with DREAD, classifying data sensitivity, or
-  designing security controls for a new system. Use before writing security code, when
-  onboarding to a new codebase's security posture, or when preparing for a security review.
-  Triggers: "threat model", "attack surface", "STRIDE", "trust boundary", "security design",
-  "what could go wrong", "security risks", "data classification".
+description: "Use when performing threat modeling, identifying attack surfaces, mapping trust boundaries, applying STRIDE analysis, scoring threats with DREAD, classifying data sensitivity, or designing security controls for a new system. Use before writing security code, when onboarding to a new codebase's security posture, or when preparing for a security review. Triggers: \"threat model\", \"attack surface\", \"STRIDE\", \"trust boundary\", \"security design\", \"what could go wrong\", \"security risks\", \"data classification\"."
 ---
 
 # Threat Modeling

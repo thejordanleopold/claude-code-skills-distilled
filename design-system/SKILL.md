@@ -1,11 +1,6 @@
 ---
 name: design-system
-description: |
-  Use when establishing a design system, choosing color palettes, defining typography,
-  creating design tokens, setting spacing standards, writing a DESIGN.md document, or making
-  foundational visual design decisions for a product. Triggers: "design system", "color palette",
-  "typography", "design tokens", "brand", "visual design", "DESIGN.md", "spacing system",
-  "what colors should I use", "font choice", "design language", "visual theme".
+description: "Use when establishing a design system, choosing color palettes, defining typography, creating design tokens, setting spacing standards, writing a DESIGN.md document, or making foundational visual design decisions for a product. Triggers: \"design system\", \"color palette\", \"typography\", \"design tokens\", \"brand\", \"visual design\", \"DESIGN.md\", \"spacing system\", \"what colors should I use\", \"font choice\", \"design language\", \"visual theme\"."
 ---
 
 # Design System

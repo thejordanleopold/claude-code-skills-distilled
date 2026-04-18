@@ -1,11 +1,6 @@
 ---
 name: skill-creation
-description: |
-  Use when creating a new Claude Code skill, editing or improving an existing skill, reviewing
-  skill quality for discoverability and behavioral impact, structuring skills with subagent
-  delegation, progressive disclosure, or phased execution. Triggers: "create a skill",
-  "new skill", "edit skill", "skill quality", "SKILL.md", "skill description", "skill trigger",
-  "CSO", "skill anatomy", "when to create a skill".
+description: "Use when creating a new Claude Code skill, editing or improving an existing skill, reviewing skill quality for discoverability and behavioral impact, structuring skills with subagent delegation, progressive disclosure, or phased execution. Triggers: \"create a skill\", \"new skill\", \"edit skill\", \"skill quality\", \"SKILL.md\", \"skill description\", \"skill trigger\", \"CSO\", \"skill anatomy\", \"when to create a skill\"."
 ---
 
 # Skill Creation

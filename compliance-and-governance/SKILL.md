@@ -1,11 +1,6 @@
 ---
 name: compliance-and-governance
-description: |
-  Use when preparing for SOC 2 Type I or Type II audits, implementing ISO 27001 ISMS,
-  achieving GDPR compliance, conducting gap analysis against compliance frameworks, mapping
-  controls to audit criteria, collecting and automating audit evidence, designing continuous
-  compliance monitoring, or managing vendor risk assessments. Apply to SaaS companies,
-  regulated industries, or any organization requiring third-party security or privacy assurance.
+description: "Use when preparing for SOC 2 Type I or Type II audits, implementing ISO 27001 ISMS, achieving GDPR compliance, conducting gap analysis against compliance frameworks, mapping controls to audit criteria, collecting and automating audit evidence, designing continuous compliance monitoring, or managing vendor risk assessments. Apply to SaaS companies, regulated industries, or any organization requiring third-party security or privacy assurance."
 ---
 
 # Compliance and Governance

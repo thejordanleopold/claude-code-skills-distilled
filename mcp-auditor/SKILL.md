@@ -1,14 +1,6 @@
 ---
 name: mcp-auditor
-description: |
-  Use when auditing MCP server configurations for poisoned tool descriptions, malicious
-  tool registrations, or exfiltration channels. Use when reviewing agent config files
-  before adding a new MCP server, auditing live tool descriptions served by an MCP
-  endpoint, or investigating suspicious tool behavior at runtime. Triggers: "MCP audit",
-  "MCP poisoning", "tool description attack", "MCP config review", "tool shadowing",
-  "rug pull", "HashJack", "MPMA", "MCP exfiltration", "mcp.json audit", "tool description
-  injection", "cross-tool escalation", "MCP security", "audit MCP tools", "scan MCP",
-  "MCP server review", "tool poisoning", "claude.json audit", "AgentSeal scan-mcp".
+description: "Use when auditing MCP server configurations for poisoned tool descriptions, malicious tool registrations, or exfiltration channels. Use when reviewing agent config files before adding a new MCP server, auditing live tool descriptions served by an MCP endpoint, or investigating suspicious tool behavior at runtime. Triggers: \"MCP audit\", \"MCP poisoning\", \"tool description attack\", \"MCP config review\", \"tool shadowing\", \"rug pull\", \"HashJack\", \"MPMA\", \"MCP exfiltration\", \"mcp.json audit\", \"tool description injection\", \"cross-tool escalation\", \"MCP security\", \"audit MCP tools\", \"scan MCP\", \"MCP server review\", \"tool poisoning\", \"claude.json audit\", \"AgentSeal scan-mcp\"."
 allowed-tools:
   - Read
   - Glob

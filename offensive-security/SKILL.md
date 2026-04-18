@@ -1,13 +1,6 @@
 ---
 name: offensive-security
-description: |
-  Use when performing authorized penetration testing, CTF challenges, red team exercises,
-  or security research. Triggers on: pentest, CTF, red team, OSCP, hack the box, privilege
-  escalation, privesc, lateral movement, active directory attack, AD attack, Kerberoasting,
-  ASREPRoasting, BloodHound, Mimikatz, credential dumping, DCSync, pass-the-hash,
-  enumeration, recon, OSINT, web app attack, SQLi, XSS, SSRF, LFI, file upload bypass,
-  password cracking, hashcat, password spray, persistence backdoor, container escape,
-  docker escape, cloud misconfiguration, AWS IAM escalation, Kubernetes attack.
+description: "Use when performing authorized penetration testing, CTF challenges, red team exercises, or security research. Triggers on: pentest, CTF, red team, OSCP, hack the box, privilege escalation, privesc, lateral movement, active directory attack, AD attack, Kerberoasting, ASREPRoasting, BloodHound, Mimikatz, credential dumping, DCSync, pass-the-hash, enumeration, recon, OSINT, web app attack, SQLi, XSS, SSRF, LFI, file upload bypass, password cracking, hashcat, password spray, persistence backdoor, container escape, docker escape, cloud misconfiguration, AWS IAM escalation, Kubernetes attack."
 ---
 
 # Offensive Security

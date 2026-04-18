@@ -1,11 +1,6 @@
 ---
 name: security-hardening
-description: |
-  Use when hardening application configuration, implementing security headers, adding rate
-  limiting, managing secrets and environment variables, auditing dependencies for vulnerabilities,
-  assessing supply chain risk, responding to leaked secrets, or implementing defense-in-depth
-  architecture. Triggers: "harden", "security headers", "CSP", "HSTS", "rate limiting",
-  "secrets management", "dependency audit", "npm audit", "supply chain", "leaked secret".
+description: "Use when hardening application configuration, implementing security headers, adding rate limiting, managing secrets and environment variables, auditing dependencies for vulnerabilities, assessing supply chain risk, responding to leaked secrets, or implementing defense-in-depth architecture. Triggers: \"harden\", \"security headers\", \"CSP\", \"HSTS\", \"rate limiting\", \"secrets management\", \"dependency audit\", \"npm audit\", \"supply chain\", \"leaked secret\"."
 ---
 
 # Security Hardening

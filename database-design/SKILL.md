@@ -1,11 +1,6 @@
 ---
 name: database-design
-description: |
-  Use when designing relational database schemas from requirements, normalizing existing schemas,
-  planning zero-downtime migrations for large tables, implementing multi-tenancy patterns,
-  designing audit trails or soft-delete strategies, configuring row-level security (RLS),
-  planning index strategies, or generating TypeScript/Python types from schema. Use for schema
-  normalization, relationship design, migration planning, index optimization, and data integrity.
+description: "Use when designing relational database schemas from requirements, normalizing existing schemas, planning zero-downtime migrations for large tables, implementing multi-tenancy patterns, designing audit trails or soft-delete strategies, configuring row-level security (RLS), planning index strategies, or generating TypeScript/Python types from schema. Use for schema normalization, relationship design, migration planning, index optimization, and data integrity."
 ---
 
 # Database Design

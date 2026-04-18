@@ -1,14 +1,6 @@
 ---
 name: skill-scanner
-description: |
-  Use when scanning Claude Code skill files on disk for malicious payloads, backdoors, or
-  supply-chain attacks embedded in SKILL.md or bundled scripts. Use when auditing a skill
-  before installing it, reviewing third-party skills for trustworthiness, or investigating
-  suspicious agent behavior after skill installation. Triggers: "scan skills", "dangerous
-  skill", "skill audit", "skill backdoor", "CLAUDE.md poisoning", "memory poison", "skill
-  supply chain", "hook exploit", "conftest RCE", "postinstall hook", "symlink exfiltration",
-  "skill payload", "skill malware", "skill integrity check", "skill security", "audit skills",
-  "skill scanner", "dangerous-skills", "warden scan".
+description: "Use when scanning Claude Code skill files on disk for malicious payloads, backdoors, or supply-chain attacks embedded in SKILL.md or bundled scripts. Use when auditing a skill before installing it, reviewing third-party skills for trustworthiness, or investigating suspicious agent behavior after skill installation. Triggers: \"scan skills\", \"dangerous skill\", \"skill audit\", \"skill backdoor\", \"CLAUDE.md poisoning\", \"memory poison\", \"skill supply chain\", \"hook exploit\", \"conftest RCE\", \"postinstall hook\", \"symlink exfiltration\", \"skill payload\", \"skill malware\", \"skill integrity check\", \"skill security\", \"audit skills\", \"skill scanner\", \"dangerous-skills\", \"warden scan\"."
 allowed-tools:
   - Read
   - Glob

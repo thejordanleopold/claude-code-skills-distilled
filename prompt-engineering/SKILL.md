@@ -1,11 +1,6 @@
 ---
 name: prompt-engineering
-description: |
-  Use when optimizing prompts for clarity or performance, designing reusable prompt templates,
-  implementing few-shot or chain-of-thought patterns, evaluating LLM output quality, versioning
-  and A/B testing prompts, designing system prompts for AI agents, or establishing prompt
-  governance. Use for prompt optimization, LLM evaluation frameworks, structured output design,
-  agent system prompt design, and ReAct/Plan-Execute reasoning patterns.
+description: "Use when optimizing prompts for clarity or performance, designing reusable prompt templates, implementing few-shot or chain-of-thought patterns, evaluating LLM output quality, versioning and A/B testing prompts, designing system prompts for AI agents, or establishing prompt governance. Use for prompt optimization, LLM evaluation frameworks, structured output design, agent system prompt design, and ReAct/Plan-Execute reasoning patterns."
 ---
 
 # Prompt Engineering

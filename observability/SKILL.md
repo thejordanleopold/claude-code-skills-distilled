@@ -1,11 +1,6 @@
 ---
 name: observability
-description: |
-  Use when setting up monitoring, logging, tracing, or instrumentation for a production service,
-  adding observability to a new service, debugging a production incident without enough visibility,
-  designing alerting rules, reducing alert fatigue, or building oncall dashboards. Triggers:
-  "observability", "monitoring", "logging", "tracing", "OpenTelemetry", "metrics", "alerting",
-  "dashboard", "distributed tracing", "structured logs", "oncall", "no visibility into".
+description: "Use when setting up monitoring, logging, tracing, or instrumentation for a production service, adding observability to a new service, debugging a production incident without enough visibility, designing alerting rules, reducing alert fatigue, or building oncall dashboards. Triggers: \"observability\", \"monitoring\", \"logging\", \"tracing\", \"OpenTelemetry\", \"metrics\", \"alerting\", \"dashboard\", \"distributed tracing\", \"structured logs\", \"oncall\", \"no visibility into\"."
 ---
 
 # Observability

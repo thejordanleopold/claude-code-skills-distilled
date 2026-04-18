@@ -1,12 +1,6 @@
 ---
 name: ai-security
-description: |
-  Use when auditing AI/LLM systems for security vulnerabilities, reviewing prompt injection
-  risks, auditing MCP server tool integrations, assessing AI agent behavioral drift, reviewing
-  credential scoping for agents, or designing safe agentic systems. Triggers: "AI security",
-  "LLM security", "prompt injection", "tool abuse", "MCP security", "agent security",
-  "behavioral drift", "AI agent audit", "insecure plugin", "agentic threat", "LLM threat",
-  "indirect injection", "credential exposure", "excessive agency".
+description: "Use when auditing AI/LLM systems for security vulnerabilities, reviewing prompt injection risks, auditing MCP server tool integrations, assessing AI agent behavioral drift, reviewing credential scoping for agents, or designing safe agentic systems. Triggers: \"AI security\", \"LLM security\", \"prompt injection\", \"tool abuse\", \"MCP security\", \"agent security\", \"behavioral drift\", \"AI agent audit\", \"insecure plugin\", \"agentic threat\", \"LLM threat\", \"indirect injection\", \"credential exposure\", \"excessive agency\"."
 ---
 
 # AI Security

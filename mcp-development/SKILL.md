@@ -1,12 +1,6 @@
 ---
 name: mcp-development
-description: |
-  Use when building MCP (Model Context Protocol) servers to expose tools, resources, or
-  prompts to LLMs. Use when designing tool schemas, implementing TypeScript or Python MCP
-  servers, writing tool descriptions for discoverability, creating evaluations for MCP
-  effectiveness, or debugging MCP integrations. Triggers: "MCP server", "model context
-  protocol", "build MCP", "MCP tool", "MCP development", "Claude tool", "tool server",
-  "MCP SDK", "function calling server", "create MCP", "MCP integration".
+description: "Use when building MCP (Model Context Protocol) servers to expose tools, resources, or prompts to LLMs. Use when designing tool schemas, implementing TypeScript or Python MCP servers, writing tool descriptions for discoverability, creating evaluations for MCP effectiveness, or debugging MCP integrations. Triggers: \"MCP server\", \"model context protocol\", \"build MCP\", \"MCP tool\", \"MCP development\", \"Claude tool\", \"tool server\", \"MCP SDK\", \"function calling server\", \"create MCP\", \"MCP integration\"."
 ---
 
 # MCP Development

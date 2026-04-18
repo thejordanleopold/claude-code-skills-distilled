@@ -1,12 +1,6 @@
 ---
 name: security-review
-description: |
-  Use when auditing code for security vulnerabilities, running static analysis with Semgrep or
-  CodeQL, reviewing against OWASP Top 10:2025, performing variant analysis after a finding,
-  checking constant-time cryptographic code, auditing input validation, authentication, session
-  management, or reviewing for insecure defaults and sharp edges. Triggers: "security audit",
-  "security review", "OWASP", "vulnerability", "static analysis", "semgrep", "injection",
-  "SQL injection", "XSS", "auth vulnerability", "insecure default".
+description: "Use when auditing code for security vulnerabilities, running static analysis with Semgrep or CodeQL, reviewing against OWASP Top 10:2025, performing variant analysis after a finding, checking constant-time cryptographic code, auditing input validation, authentication, session management, or reviewing for insecure defaults and sharp edges. Triggers: \"security audit\", \"security review\", \"OWASP\", \"vulnerability\", \"static analysis\", \"semgrep\", \"injection\", \"SQL injection\", \"XSS\", \"auth vulnerability\", \"insecure default\"."
 ---
 
 # Security Review

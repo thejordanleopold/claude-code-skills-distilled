@@ -1,12 +1,6 @@
 ---
 name: coding-principles
-description: |
-  Use when making implementation decisions, deciding how to structure code, choosing between
-  simple and clever approaches, managing dependencies, applying 12-factor principles, handling
-  destructive operations safely, or applying incremental delivery discipline. Use when starting
-  to implement a feature and needing a guiding framework for day-to-day coding decisions.
-  Triggers: "how should I write this", "should I abstract this", "is this too complex",
-  "what dependencies should I use", "incremental delivery", "simplicity", "YAGNI".
+description: "Use when making implementation decisions, deciding how to structure code, choosing between simple and clever approaches, managing dependencies, applying 12-factor principles, handling destructive operations safely, or applying incremental delivery discipline. Use when starting to implement a feature and needing a guiding framework for day-to-day coding decisions. Triggers: \"how should I write this\", \"should I abstract this\", \"is this too complex\", \"what dependencies should I use\", \"incremental delivery\", \"simplicity\", \"YAGNI\"."
 ---
 
 # Coding Principles

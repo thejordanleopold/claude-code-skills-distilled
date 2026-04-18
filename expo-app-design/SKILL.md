@@ -1,13 +1,6 @@
 ---
 name: expo-app-design
-description: |
-  Use when building mobile or universal apps with Expo and Expo Router. Covers file-based
-  routing, native tabs, form sheets, Reanimated animations, scroll-driven effects, media
-  handling, storage patterns, visual effects (blur, glass), 3D graphics, and platform-
-  specific design patterns for iOS and Android. Triggers: "Expo", "Expo Router", "React
-  Native UI", "native tabs", "form sheet", "native navigation", "Expo app", "mobile UI",
-  "React Native animations", "expo-image", "native modal", "Reanimated", "expo-blur",
-  "expo-sqlite", "SF Symbols", "Apple design".
+description: "Use when building mobile or universal apps with Expo and Expo Router. Covers file-based routing, native tabs, form sheets, Reanimated animations, scroll-driven effects, media handling, storage patterns, visual effects (blur, glass), 3D graphics, and platform- specific design patterns for iOS and Android. Triggers: \"Expo\", \"Expo Router\", \"React Native UI\", \"native tabs\", \"form sheet\", \"native navigation\", \"Expo app\", \"mobile UI\", \"React Native animations\", \"expo-image\", \"native modal\", \"Reanimated\", \"expo-blur\", \"expo-sqlite\", \"SF Symbols\", \"Apple design\"."
 ---
 
 # Expo App Design

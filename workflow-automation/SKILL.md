@@ -1,12 +1,6 @@
 ---
 name: workflow-automation
-description: |
-  Use when designing or implementing automated workflows, task coordination systems, or
-  multi-step process automation. Use when defining workflows as specs before implementing,
-  handling human-in-the-loop approval steps, managing task dependencies, automating browser
-  interactions, or building retry and error recovery into automated processes. Triggers:
-  "workflow", "automation", "automate this process", "task coordination", "approval flow",
-  "browser automation", "spec-driven", "dependency management", "orchestration".
+description: "Use when designing or implementing automated workflows, task coordination systems, or multi-step process automation. Use when defining workflows as specs before implementing, handling human-in-the-loop approval steps, managing task dependencies, automating browser interactions, or building retry and error recovery into automated processes. Triggers: \"workflow\", \"automation\", \"automate this process\", \"task coordination\", \"approval flow\", \"browser automation\", \"spec-driven\", \"dependency management\", \"orchestration\"."
 ---
 
 # Workflow Automation
